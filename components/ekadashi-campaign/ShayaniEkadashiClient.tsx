@@ -402,6 +402,7 @@ export default function ShayaniEkadashiClient() {
         body: JSON.stringify({
           account: "default",
           sourcePage: "/shayani-ekadashi",
+          site: "kakinada",
           utm: attribution.payload().utm,
           type: selectedSeva.category,
           sevaName: selectedSeva.sevaName,

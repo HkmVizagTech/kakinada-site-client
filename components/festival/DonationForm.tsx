@@ -92,6 +92,7 @@ export default function DonationForm({ config, setToast }: any) {
           } : null,
           festivalSlug: config?.slug || config?.title || undefined,
           sourcePage: attribution.sourcePage,
+          site: "kakinada",
           utm: attribution.payload().utm
         })
       });

@@ -150,6 +150,7 @@ export default function DonationForm({
       const baseBody = {
         account: seva.account,
         sourcePage,
+        site: "kakinada",
         ...(festivalSlug ? { festivalSlug } : {}),
         utm: attribution.payload().utm,
         type: seva.category,

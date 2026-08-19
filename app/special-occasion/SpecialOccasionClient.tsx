@@ -194,6 +194,7 @@ export default function SpecialOccasionClient() {
         body: JSON.stringify({
           account: selectedSeva.account,
           sourcePage: "/special-occasion",
+          site: "kakinada",
           sevaName: selectedSeva.title,
           message: `Special Occasion: ${occasion}${dedication ? ` — ${dedication}` : ""}`,
           name: form.name.trim(),

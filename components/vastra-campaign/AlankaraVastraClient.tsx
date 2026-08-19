@@ -277,6 +277,7 @@ export default function AlankaraVastraClient() {
       const baseBody = {
         account: "default",
         sourcePage: "/alankara-vastra-seva",
+        site: "kakinada",
         utm: attribution.payload().utm,
         type: config.orderType,
         sevaName: config.pageTitle,

@@ -98,7 +98,7 @@ export default function SubhojanamPage() {
       const metaBrowser = getMetaBrowserData();
       const orderRes = await fetch(`${apiBase()}/payments/order`, {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ account: "touchstone", sourcePage: "/subhojanam", utm: attribution.payload().utm, sevaName: "Subhojanam", name: form.name.trim(), email: form.email.trim().toLowerCase(), mobile: form.mobile.trim(), amount: checkoutTier.amountValue, metaEventId, metaFbp: metaBrowser.fbp, metaFbc: metaBrowser.fbc }),
+        body: JSON.stringify({ account: "touchstone", sourcePage: "/subhojanam", site: "kakinada", utm: attribution.payload().utm, sevaName: "Subhojanam", name: form.name.trim(), email: form.email.trim().toLowerCase(), mobile: form.mobile.trim(), amount: checkoutTier.amountValue, metaEventId, metaFbp: metaBrowser.fbp, metaFbc: metaBrowser.fbc }),
       });
       if (!orderRes.ok) { const body = await orderRes.json().catch(() => ({})); throw new Error(body.message || "Unable to create payment order."); }
       const order = await orderRes.json();

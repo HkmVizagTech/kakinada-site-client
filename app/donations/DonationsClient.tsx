@@ -279,6 +279,7 @@ export default function DonationsClient() {
         body: JSON.stringify({
           account: "donations",
           sourcePage: "donations",
+          site: "kakinada",
           type: selected.category,
           sevaName: selected.title,
           name: form.donorName.trim(),

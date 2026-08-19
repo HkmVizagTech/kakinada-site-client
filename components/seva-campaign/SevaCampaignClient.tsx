@@ -189,6 +189,7 @@ export default function SevaCampaignClient({ slug }: { slug: string }) {
       const baseBody = {
         account: config.account,
         sourcePage: config.path,
+        site: "kakinada",
         utm: attribution.payload().utm,
         type: config.type,
         sevaName: config.pageTitle,
