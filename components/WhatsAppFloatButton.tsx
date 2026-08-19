@@ -1,0 +1,33 @@
+"use client";
+
+// Floating WhatsApp contact button — same number and pattern used on
+// annadan.harekrishnavizag.org (wa.me/918977761187). Meant to sit on every
+// individual donation page so a donor with questions (or who wants to send
+// a payment screenshot) has a one-tap way to reach the temple.
+//
+// Deliberately NOT added to /donations — per standing instruction, that
+// page is only ever touched when explicitly requested by name.
+
+const WHATSAPP_NUMBER = "918977761187"; // 91 + 8977761187
+
+export default function WhatsAppFloatButton({
+  message = "Hare Krishna! I have a question about making a donation.",
+}: {
+  message?: string;
+}) {
+  const href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat on WhatsApp"
+      className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-transform hover:scale-110 active:scale-95 md:bottom-6 md:right-6"
+    >
+      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 fill-white">
+        <path d="M16.001 3C9.096 3 3.5 8.596 3.5 15.5c0 2.42.69 4.68 1.887 6.6L3 29l7.09-2.35a12.42 12.42 0 0 0 5.91 1.5c6.905 0 12.5-5.596 12.5-12.5S22.906 3 16.001 3Zm0 22.688a10.15 10.15 0 0 1-5.176-1.42l-.371-.22-4.207 1.394 1.412-4.1-.242-.386a10.13 10.13 0 0 1-1.604-5.456c0-5.606 4.582-10.188 10.19-10.188 5.606 0 10.187 4.582 10.187 10.188 0 5.605-4.581 10.188-10.189 10.188Zm5.583-7.634c-.306-.153-1.81-.893-2.09-.994-.28-.102-.484-.153-.688.153-.204.306-.79.994-.968 1.198-.178.204-.357.23-.663.077-.306-.153-1.292-.476-2.462-1.518-.91-.812-1.525-1.815-1.703-2.121-.178-.306-.019-.472.134-.624.137-.137.306-.357.459-.535.153-.178.204-.306.306-.51.102-.204.051-.383-.026-.535-.077-.153-.688-1.658-.943-2.271-.248-.596-.5-.516-.688-.525-.178-.009-.382-.011-.586-.011-.204 0-.535.077-.815.383-.28.306-1.069 1.044-1.069 2.548 0 1.503 1.094 2.956 1.247 3.16.153.204 2.153 3.287 5.216 4.608.729.314 1.297.502 1.74.643.731.232 1.396.199 1.921.121.586-.088 1.81-.74 2.065-1.454.255-.714.255-1.325.178-1.454-.076-.128-.28-.204-.586-.357Z" />
+      </svg>
+    </a>
+  );
+}
