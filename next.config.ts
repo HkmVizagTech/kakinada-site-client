@@ -26,10 +26,16 @@ const nextConfig: NextConfig = {
         hostname: "res.cloudinary.com",
         pathname: "/**",
       },
-      // Cloudflare R2 — hkmsite-media bucket public URL
+      // Cloudflare R2 — hkmsite-media bucket public URL (Vizag shared assets)
       {
         protocol: "https",
         hostname: "pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev",
+        pathname: "/**",
+      },
+      // Cloudflare R2 — ISKCON Kakinada bucket
+      {
+        protocol: "https",
+        hostname: "pub-a141ba4729a546b29a5015432b31bd23.r2.dev",
         pathname: "/**",
       },
       // Cloudflare R2 — Temple Images bucket (campaigner pages)
