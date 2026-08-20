@@ -66,7 +66,7 @@ const BlogPreview = () => {
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Timeless teachings, festival guides, and inspiration from the Hare
-            Krishna Movement, Visakhapatnam.
+            Krishna Movement, Kakinada.
           </p>
         </motion.div>
 

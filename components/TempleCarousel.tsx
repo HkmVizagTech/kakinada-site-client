@@ -25,7 +25,7 @@ const defaultSlides: TempleCarouselSlide[] = [
   {
     src: "/assets/home-banner-chaitanya-bhavan.webp",
     mobileSrc: "/assets/home-banner-chaitanya-bhavan-mobile.webp",
-    title: "Chaitanya Bhavan",
+    title: "ISKCON Kakinada",
     linkUrl: "",
   },
   {

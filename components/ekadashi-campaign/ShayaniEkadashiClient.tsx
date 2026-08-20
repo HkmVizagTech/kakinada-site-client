@@ -34,23 +34,23 @@ const apiBase = () =>
 
 const EKADASHI_CONFIG = {
   pageTitle: "Shayani Ekadashi Seva",
-  metaTitle: "Shayani Ekadashi Seva | Hare Krishna Vaikuntham Temple, Visakhapatnam",
+  metaTitle: "Shayani Ekadashi Seva | ISKCON Kakinada",
   metaDesc:
-    "Donate on Shayani Ekadashi as Lord Vishnu begins His four months of divine rest. Sponsor seva at the Hare Krishna Vaikuntham Temple on one of the year's most sacred days.",
-  ogTitle: "Shayani Ekadashi Seva — Hare Krishna Vaikuntham Temple",
+    "Donate on Shayani Ekadashi as Lord Vishnu begins His four months of divine rest. Sponsor seva at the ISKCON Kakinada on one of the year's most sacred days.",
+  ogTitle: "Shayani Ekadashi Seva — ISKCON Kakinada",
   ogDesc:
-    "Offer seva on Shayani Ekadashi at the Hare Krishna Vaikuntham Temple. Your donation sustains daily worship, sacred bhog, and festive arrangements during Chaturmas.",
+    "Offer seva on Shayani Ekadashi at the ISKCON Kakinada. Your donation sustains daily worship, sacred bhog, and festive arrangements during Chaturmas.",
   ogImage: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/ekadashi-posters/ad%20poster%201%2016-9%20%20final%20.jpg.webp",
   heroImage: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/ekadashi-posters/ad%20poster%201%2016-9%20%20final%20.jpg.webp",
   heroImageMobile: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/ekadashi-posters/poster%202%20final%20.jpg.webp",
-  heroTagline: "A seva initiative of Hare Krishna Movement Visakhapatnam",
+  heroTagline: "A seva initiative of ISKCON Kakinada",
   heroHeading1: "Shayani Ekadashi",
   heroHeading2: "Seva",
   heroDesc:
-    "Donate on Shayani Ekadashi (Ashadhi Ekadashi) as Lord Vishnu begins His four months of divine rest, and offer seva at the Hare Krishna Vaikuntham Temple on one of the year's most sacred days.",
+    "Donate on Shayani Ekadashi (Ashadhi Ekadashi) as Lord Vishnu begins His four months of divine rest, and offer seva at the ISKCON Kakinada on one of the year's most sacred days.",
   formHeading: "Donate for Ekadashi Seva",
   formSubheading:
-    "Your donation on this sacred day supports special puja arrangements, sacred bhog, and temple seva performed at the Hare Krishna Vaikuntham Temple.",
+    "Your donation on this sacred day supports special puja arrangements, sacred bhog, and temple seva performed at the ISKCON Kakinada.",
   phone: "+91 89777 61187",
   phoneHref: "tel:+918977761187",
   email: "social@hkmvizag.org",
@@ -216,7 +216,7 @@ const SIGNIFICANCE_POINTS = [
 const WHY_DONATE_SECTIONS = [
   {
     title: "A Sacred Opportunity to Serve",
-    text: "As Lord Vishnu enters His divine rest, devotees are given a rare window to earn deep spiritual merit through seva. Your contribution on this day helps sustain the daily worship, festive arrangements, and upkeep of the Hare Krishna Vaikuntham Temple, allowing you to take part in the Lord's service even from a distance.",
+    text: "As Lord Vishnu enters His divine rest, devotees are given a rare window to earn deep spiritual merit through seva. Your contribution on this day helps sustain the daily worship, festive arrangements, and upkeep of the ISKCON Kakinada, allowing you to take part in the Lord's service even from a distance.",
   },
   {
     title: "Seva That Reaches the Lord Directly",
@@ -228,7 +228,7 @@ const WHY_DONATE_SECTIONS = [
   },
   {
     title: "Be Part of the Temple's Ongoing Worship",
-    text: "The Hare Krishna Vaikuntham Temple continues its daily seva through the support of devotees like you. Your Shayani Ekadashi donation ensures that the worship, bhog, and celebrations at the temple continue uninterrupted, connecting you to the temple's spiritual mission even if you cannot visit in person.",
+    text: "The ISKCON Kakinada continues its daily seva through the support of devotees like you. Your Shayani Ekadashi donation ensures that the worship, bhog, and celebrations at the temple continue uninterrupted, connecting you to the temple's spiritual mission even if you cannot visit in person.",
   },
 ];
 
@@ -433,7 +433,7 @@ export default function ShayaniEkadashiClient() {
         amount: Math.round(finalAmount * 100),
         currency: "INR",
         name: "Hare Krishna Movement Kakinada",
-        description: `${selectedSeva.sevaName} — Hare Krishna Vaikuntham Temple`,
+        description: `${selectedSeva.sevaName} — ISKCON Kakinada`,
         order_id: order.orderId,
         prefill: { name: form.name, email: form.email, contact: form.mobile },
         notes: { sourcePage: "/shayani-ekadashi", sevaName: selectedSeva.sevaName, sevaType: selectedSeva.category },
@@ -489,7 +489,7 @@ export default function ShayaniEkadashiClient() {
               <source srcSet={EKADASHI_CONFIG.heroImage} />
               <img
                 src={EKADASHI_CONFIG.heroImage}
-                alt="Shayani Ekadashi Seva — Hare Krishna Vaikuntham Temple"
+                alt="Shayani Ekadashi Seva — ISKCON Kakinada"
                 fetchPriority="high"
                 className="h-auto w-full"
               />
@@ -858,7 +858,7 @@ export default function ShayaniEkadashiClient() {
             >
               Contributing to Devshayani Ekadashi is one of the most meaningful ways to serve the Lord
               as He begins His divine rest. Your donation supports special puja arrangements, sacred bhog,
-              and temple seva performed at the Hare Krishna Vaikuntham Temple on this holy day.
+              and temple seva performed at the ISKCON Kakinada on this holy day.
             </motion.p>
           </div>
         </section>

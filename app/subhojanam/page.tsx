@@ -22,7 +22,7 @@ const apiBase = () => (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080
 
 const stats = [
   { icon: Utensils, value: "3,000+", label: "Meals Served Daily", sub: "Hot, nutritious, hygienic" },
-  { icon: Hospital, value: "2", label: "Government Hospitals", sub: "KGH Vizag · GGH Kakinada" },
+  { icon: Hospital, value: "2", label: "Government Hospitals", sub: "Local government hospitals" },
   { icon: Users, value: "10,95,000+", label: "Annual Beneficiaries", sub: "Patients & attendants" },
   { icon: Clock, value: "365", label: "Days a Year", sub: "No holidays, no breaks" },
 ];
@@ -38,7 +38,7 @@ const donationTiers = [
 const mealProcess = [
   { step: "01", title: "Kitchen Preparation", desc: "Every morning, our trained cooks prepare fresh, hygienic meals in our dedicated kitchen following strict quality standards." },
   { step: "02", title: "Quality Check", desc: "Each batch is inspected for nutrition, hygiene and taste before it is packaged and prepared for distribution." },
-  { step: "03", title: "Hospital Distribution", desc: "Volunteers carry the meals to KGH Visakhapatnam and GGH Kakinada and distribute directly to patients and their families." },
+  { step: "03", title: "Hospital Distribution", desc: "Volunteers carry the meals to local hospitals in Kakinada and distribute directly to patients and their families." },
   { step: "04", title: "Consistent Service", desc: "This cycle runs every single day of the year — 365 days, without exception, rain or shine." },
 ];
 
@@ -46,7 +46,7 @@ const testimonials = [
   {
     quote: "When my mother was admitted at KGH, we couldn't afford both food and medicine. The Subhojanam meals were a blessing from God.",
     name: "Ramesh K.",
-    role: "Patient Attendant · KGH Visakhapatnam",
+    role: "Patient Attendant · Local Hospital, Kakinada",
   },
   {
     quote: "I've been volunteering for two years. Seeing the gratitude in people's eyes when they receive a warm meal is the most fulfilling experience of my life.",
@@ -161,7 +161,7 @@ export default function SubhojanamPage() {
             </h1>
             <p className="mb-8 max-w-lg text-base leading-relaxed text-white/75">
               Subhojanam provides free, hygienic, and nutritious meals every day to patients
-              and their attendants at government hospitals in Visakhapatnam and Kakinada.
+              and their attendants at government hospitals in Kakinada.
             </p>
             <div className="flex flex-wrap gap-4">
               <button
@@ -217,7 +217,7 @@ export default function SubhojanamPage() {
                 <div className="flex items-center gap-3 rounded-xl border border-border bg-card p-4">
                   <Hospital className="h-5 w-5 shrink-0 text-primary" />
                   <div>
-                    <p className="text-sm font-semibold text-foreground">KGH Hospital, Visakhapatnam</p>
+                    <p className="text-sm font-semibold text-foreground">Local Hospital, Kakinada</p>
                     <p className="text-xs text-muted-foreground">Up to 500 meals served daily</p>
                   </div>
                 </div>
@@ -368,14 +368,14 @@ export default function SubhojanamPage() {
             <div className="flex flex-wrap items-center justify-center gap-10 mb-8">
               <Image src={TouchstoneCharitiesLogo} alt="Touchstone Charities" width={220} height={220} className="h-20 w-auto object-contain" />
               <span className="hidden h-14 w-px bg-border sm:block" aria-hidden />
-              <Image src={HKMLogoBlack} alt="Srila Prabhupada's Hare Krishna Movement Visakhapatnam" width={300} height={162} className="h-14 w-auto object-contain" />
+              <Image src={HKMLogoBlack} alt="Srila Prabhupada's Hare Krishna Movement Kakinada" width={300} height={162} className="h-14 w-auto object-contain" />
             </div>
             <div className="rounded-2xl border border-border bg-background p-6 text-center">
               <p className="text-sm leading-relaxed text-muted-foreground">
                 Subhojanam is a charitable programme run under{" "}
                 <span className="font-semibold text-foreground">Touchstone Charities</span>, an initiative
-                by <span className="font-semibold text-foreground">Hare Krishna Movement Visakhapatnam</span> —
-                one of the trusts of Srila Prabhupada&apos;s ISKCON Gambheeram Visakhapatnam.
+                by <span className="font-semibold text-foreground">Hare Krishna Movement Kakinada</span> —
+                one of the trusts of Srila Prabhupada&apos;s ISKCON Kakinada.
               </p>
               <div className="mt-4 flex flex-wrap justify-center gap-6 text-xs text-muted-foreground">
                 <span className="flex items-center gap-1.5"><ShieldCheck className="h-3.5 w-3.5 text-green-500" /> FCRA Registered Trust</span>

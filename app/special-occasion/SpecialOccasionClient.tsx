@@ -118,7 +118,7 @@ function HeroSparkles() {
 const BENEFITS = [
   { icon: UtensilsCrossed, title: "Anna Daan", text: "Feed devotees and the underprivileged with sanctified prasadam" },
   { icon: Heart, title: "Gau Seva", text: "Care for the temple's cows through fodder, shelter, and medicine" },
-  { icon: Building2, title: "Temple Rising", text: "Become part of the Hare Krishna Vaikuntham Temple, brick by brick" },
+  { icon: Building2, title: "Temple Rising", text: "Become part of the ISKCON Kakinada, brick by brick" },
 ];
 
 const TRUST_BADGES = [
@@ -349,7 +349,7 @@ export default function SpecialOccasionClient() {
               </h1>
               <p className="mx-auto mb-3 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
                 A birthday, anniversary, or milestone is a moment of gratitude. Instead of — or alongside —
-                the usual celebration, sponsor a seva at the Hare Krishna Vaikuntham Temple in that spirit
+                the usual celebration, sponsor a seva at the ISKCON Kakinada in that spirit
                 of thanksgiving.
               </p>
               <Ornament className="my-8" />
@@ -587,7 +587,7 @@ export default function SpecialOccasionClient() {
               Make your celebration part of something permanent
             </h2>
             <p className="mb-6 text-sm text-white/80 md:text-base">
-              Sponsor a Square Foot of the Hare Krishna Vaikuntham Temple&apos;s foundation in honour of your special day.
+              Sponsor a Square Foot of the ISKCON Kakinada&apos;s foundation in honour of your special day.
             </p>
             <Link href={getSevaHref(sevas[0])} className="inline-block rounded-full bg-gradient-gold px-10 py-3.5 text-base font-bold text-[hsl(220,90%,12%)] shadow-gold transition-transform hover:scale-105">
               Explore Square Foot Seva

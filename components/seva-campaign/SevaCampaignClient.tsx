@@ -237,7 +237,7 @@ export default function SevaCampaignClient({ slug }: { slug: string }) {
       const checkoutOptions: Record<string, unknown> = {
         key: created.key,
         name: "Hare Krishna Movement Kakinada",
-        description: `${config.pageTitle}${monthly ? " — Monthly" : ""} — Hare Krishna Vaikuntham Temple`,
+        description: `${config.pageTitle}${monthly ? " — Monthly" : ""} — ISKCON Kakinada`,
         prefill: { name: form.name, email: form.email, contact: form.mobile },
         notes: { sourcePage: config.path, sevaName: config.pageTitle, sevaType: config.type },
         handler: async (response: Record<string, string>) => {

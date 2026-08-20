@@ -326,7 +326,7 @@ export default function VaishnavCalendarPage() {
 
           {/* ── Discover Section ──────────────────────────────── */}
           <div className="mt-10">
-            <h2 className="mb-2 text-xl font-bold text-foreground">Discover HKM Vizag</h2>
+            <h2 className="mb-2 text-xl font-bold text-foreground">Discover ISKCON Kakinada</h2>
             <p className="mb-5 text-sm text-muted-foreground">Learn more about what you can do.</p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
               {discoverCards.map((card) => (

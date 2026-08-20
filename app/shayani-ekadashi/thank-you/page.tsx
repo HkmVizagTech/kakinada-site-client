@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import ThankYouClient from "@/components/ekadashi-campaign/ThankYouClient";
 
 export const metadata: Metadata = {
-  title: "Thank You | Shayani Ekadashi Seva — Hare Krishna Vaikuntham Temple",
+  title: "Thank You | Shayani Ekadashi Seva — ISKCON Kakinada",
   description:
-    "Thank you for your generous Shayani Ekadashi donation to the Hare Krishna Vaikuntham Temple. Your seva has been received.",
+    "Thank you for your generous Shayani Ekadashi donation to the ISKCON Kakinada. Your seva has been received.",
   openGraph: {
     title: "Thank You — Shayani Ekadashi Seva",
     description:

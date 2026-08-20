@@ -100,15 +100,15 @@ export const GAU_CAMPAIGN: SevaCampaignConfig = {
   slug: "gau-seva",
   path: "/gau-seva",
   pageTitle: "Gau Seva",
-  metaTitle: "Gau Seva | Hare Krishna Vaikuntham Temple, Visakhapatnam",
+  metaTitle: "Gau Seva | ISKCON Kakinada",
   metaDesc:
     "Serve the sacred cows with fodder, medicines, green grass and shelter. Sponsor daily care or adopt a cow — an act of compassion Lord Krishna Himself cherishes.",
-  ogTitle: "Gau Seva — Hare Krishna Vaikuntham Temple",
+  ogTitle: "Gau Seva — ISKCON Kakinada",
   ogDesc:
-    "Serve the sacred cows. Sponsor fodder, green grass, medicines and yearly adoption sevas at the Hare Krishna Vaikuntham Temple.",
+    "Serve the sacred cows. Sponsor fodder, green grass, medicines and yearly adoption sevas at ISKCON Kakinada.",
   ogImage: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1784305732825-1784305730000-ChatGPTImageJul172026095835PM.png",
 
-  heroTagline: "A seva initiative of Hare Krishna Movement Visakhapatnam",
+  heroTagline: "A seva initiative of ISKCON Kakinada",
   heroHeading1: "Gau Seva",
   heroHeading2: "Serve the Sacred Cows",
   heroDesc:
@@ -175,13 +175,13 @@ export const GAU_CAMPAIGN: SevaCampaignConfig = {
       quote:
         "Sponsoring a cow for a month has brought such peace to my family. Every day I know our little offering is feeding, healing and sheltering a gentle soul in the Lord's care.",
       name: "Radhika Devi",
-      role: "Gau Seva Sponsor, Visakhapatnam",
+      role: "Gau Seva Sponsor, Kakinada",
     },
     {
       quote:
         "The cows at our temple are treated with such love — you can see it in their eyes. My children love to visit them after darshan. Gau Seva has become our family's favourite service.",
       name: "Krishna Prasad",
-      role: "Regular Devotee, Vizag",
+      role: "Regular Devotee, Kakinada",
     },
     {
       quote:
@@ -201,7 +201,7 @@ export const GAU_CAMPAIGN: SevaCampaignConfig = {
     eyebrow: "Our cows, our family",
     heading: "Glimpses of Gau Seva",
     subtitle:
-      "The sacred cows in our care — fed, healed and sheltered with devotion at the Hare Krishna Vaikuntham Temple.",
+      "The sacred cows in our care — fed, healed and sheltered with devotion at ISKCON Kakinada.",
     photos: [
       { src: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1783676646237-1783676645536-ChatGPTImageJul102026031357PM.png", caption: "Our beloved Gau Mata" },
       { src: "/assets/donations-gau-seva-real.jpeg", caption: "Daily care at the goshala" },
@@ -249,15 +249,15 @@ export const ANNA_DAAN_CAMPAIGN: SevaCampaignConfig = {
   slug: "anna-daan-seva",
   path: "/anna-daan-seva",
   pageTitle: "Anna Daan Seva",
-  metaTitle: "Anna Daan Seva | Hare Krishna Vaikuntham Temple, Visakhapatnam",
+  metaTitle: "Anna Daan Seva | ISKCON Kakinada",
   metaDesc:
     "Feed the hungry with sanctified prasadam. Sponsor meals for devotees and the underprivileged — Anna Daan is the highest form of charity in the Vedic tradition.",
-  ogTitle: "Anna Daan Seva — Hare Krishna Vaikuntham Temple",
+  ogTitle: "Anna Daan Seva — ISKCON Kakinada",
   ogDesc:
     "Feed the hungry with sanctified prasadam. Anna Daan — the donation of food — is the highest form of charity in the Vedic tradition.",
   ogImage: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1783677363792-1783677363601-462395264797134589073566144398536696847591n.jpg",
 
-  heroTagline: "A seva initiative of Hare Krishna Movement Visakhapatnam",
+  heroTagline: "A seva initiative of ISKCON Kakinada",
   heroHeading1: "Anna Daan Seva",
   heroHeading2: "The Highest Charity",
   heroDesc:
@@ -299,7 +299,7 @@ export const ANNA_DAAN_CAMPAIGN: SevaCampaignConfig = {
     heading: "Food offered to the Lord becomes His mercy",
     paragraphs: [
       "In the Vedic tradition Anna Daan is revered as the most meritorious form of charity, for food sustains life itself. Lord Krishna declares in the Bhagavad Gita that He is the fire of digestion in every living being — thus feeding someone is directly serving the Lord.",
-      "Our Anna Daan programme serves wholesome, sanctified prasadam to devotees, students and the underprivileged across Visakhapatnam — every day, every festival, and during natural disasters and special occasions. Each plate is cooked with devotion in a hygienic kitchen and offered to the Lord before it reaches the one who hungers.",
+      "Our Anna Daan programme serves wholesome, sanctified prasadam to devotees, students and the underprivileged across Kakinada — every day, every festival, and during natural disasters and special occasions. Each plate is cooked with devotion in a hygienic kitchen and offered to the Lord before it reaches the one who hungers.",
     ],
     image: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1783677363792-1783677363601-462395264797134589073566144398536696847591n.jpg",
     ctaLabel: "Sponsor Meals",
@@ -324,7 +324,7 @@ export const ANNA_DAAN_CAMPAIGN: SevaCampaignConfig = {
       quote:
         "We sponsored the Sunday meal at the temple. When I saw the joy on the faces of the people being fed — especially the children — I understood the real meaning of Anna Daan.",
       name: "Madhavi Sastry",
-      role: "Meal Sponsor, Visakhapatnam",
+      role: "Meal Sponsor, Kakinada",
     },
     {
       quote:
@@ -336,7 +336,7 @@ export const ANNA_DAAN_CAMPAIGN: SevaCampaignConfig = {
       quote:
         "The prasadam from this temple is truly special — you can taste the love it is cooked with. I am proud to contribute every month knowing someone is fed because of it.",
       name: "Lakshmi Narayana",
-      role: "Monthly Donor, Vizag",
+      role: "Monthly Donor, Kakinada",
     },
     {
       quote:
@@ -350,7 +350,7 @@ export const ANNA_DAAN_CAMPAIGN: SevaCampaignConfig = {
     eyebrow: "Service in action",
     heading: "Anna Daan — Feeding with Love",
     subtitle:
-      "Glimpses of prasadam being prepared, offered to the Lord, and served to devotees and the needy across Visakhapatnam.",
+      "Glimpses of prasadam being prepared, offered to the Lord, and served to devotees and the needy across Kakinada.",
     photos: [
       { src: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1783677363792-1783677363601-462395264797134589073566144398536696847591n.jpg", caption: "Sanctified prasadam" },
       { src: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1786100757954-1786100756855-annadan2.jpg", caption: "Meal distribution" },
@@ -363,7 +363,7 @@ export const ANNA_DAAN_CAMPAIGN: SevaCampaignConfig = {
   faqs: [
     {
       q: "What is Anna Daan Seva?",
-      a: "Anna Daan is the donation of food — the highest form of charity in the Vedic tradition. Your contribution provides freshly cooked, sanctified prasadam to devotees, students and the underprivileged across Visakhapatnam.",
+      a: "Anna Daan is the donation of food — the highest form of charity in the Vedic tradition. Your contribution provides freshly cooked, sanctified prasadam to devotees, students and the underprivileged across Kakinada.",
     },
     {
       q: "How many meals will my donation provide?",
@@ -399,15 +399,15 @@ export const GITA_DAAN_CAMPAIGN: SevaCampaignConfig = {
   slug: "gita-daan-seva",
   path: "/gita-daan-seva",
   pageTitle: "Gita Daan Seva",
-  metaTitle: "Gita Daan Seva | Hare Krishna Vaikuntham Temple, Visakhapatnam",
+  metaTitle: "Gita Daan Seva | ISKCON Kakinada",
   metaDesc:
     "Gift the wisdom of the Bhagavad Gita to a seeker. Sponsor copies of Bhagavad-Gita As It Is for students, prisoners and spiritual seekers — the greatest gift of all.",
-  ogTitle: "Gita Daan Seva — Hare Krishna Vaikuntham Temple",
+  ogTitle: "Gita Daan Seva — ISKCON Kakinada",
   ogDesc:
     "There is no greater gift than transcendental knowledge. Gift Bhagavad-Gita As It Is to a seeker and plant a seed that can transform a life forever.",
   ogImage: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1783672760162-1783672758959-ChatGPTImageJul92026043444PM.png",
 
-  heroTagline: "A seva initiative of Hare Krishna Movement Visakhapatnam",
+  heroTagline: "A seva initiative of ISKCON Kakinada",
   heroHeading1: "Gita Daan Seva",
   heroHeading2: "The Gift of Knowledge",
   heroDesc:
@@ -474,7 +474,7 @@ export const GITA_DAAN_CAMPAIGN: SevaCampaignConfig = {
       quote:
         "I was going through the darkest period of my life when someone handed me a copy of the Gita. That single book changed everything. Gita Daan is the best gift I can now give another soul.",
       name: "Ramesh Chandra",
-      role: "Gita Recipient, Visakhapatnam",
+      role: "Gita Recipient, Kakinada",
     },
     {
       quote:
@@ -486,7 +486,7 @@ export const GITA_DAAN_CAMPAIGN: SevaCampaignConfig = {
       quote:
         "A college student once told me the Gita his friend gifted him saved his life. It is not just a book — it is the Lord speaking to the reader. That is why we sponsor so many.",
       name: "Bhaktivedanta Das",
-      role: "Devotee, Vizag",
+      role: "Devotee, Kakinada",
     },
     {
       quote:

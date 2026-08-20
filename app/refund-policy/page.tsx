@@ -2,14 +2,14 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 
 export const metadata = {
-  title: "Refund & Cancellation Policy · Hare Krishna Movement Visakhapatnam",
-  description: "Refund and cancellation policy for donations and event registrations at Hare Krishna Movement Visakhapatnam.",
+  title: "Refund & Cancellation Policy · Hare Krishna Movement Kakinada",
+  description: "Refund and cancellation policy for donations and event registrations at Hare Krishna Movement Kakinada.",
 };
 
 const sections = [
   {
     h: "Donations",
-    p: "Donations made to Hare Krishna Movement Visakhapatnam are voluntary contributions to charitable and religious causes and are generally non-refundable once processed.",
+    p: "Donations made to Hare Krishna Movement Kakinada are voluntary contributions to charitable and religious causes and are generally non-refundable once processed.",
   },
   {
     h: "Erroneous or Duplicate Transactions",

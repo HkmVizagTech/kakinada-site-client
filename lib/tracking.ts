@@ -2,10 +2,8 @@
 //
 // Captures UTM parameters (or a referrer-based fallback) on page load and
 // stores them in sessionStorage so they survive navigation within the same
-// visit, then reads them back when submitting a donation. Ported from
-// subhojanam-client's tracking.js (the proven annadan.harekrishnavizag.org
-// pattern) — same priority order: UTM params > ref/slug param > referrer
-// auto-detect > direct.
+// visit, then reads them back when submitting a donation. Same priority
+// order: UTM params > ref/slug param > referrer auto-detect > direct.
 
 export interface TrackingData {
   source: string;

@@ -3,7 +3,7 @@
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
-import { ArrowLeft, ArrowRight, Clock, Facebook, FileCheck2, Heart, Instagram, Mail, MapPin, MessageCircle, Phone, ShieldCheck, Youtube, UtensilsCrossed, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, FileCheck2, Heart, Mail, MapPin, MessageCircle, Phone, ShieldCheck, UtensilsCrossed, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import DonorExtrasFields from "@/components/DonorExtrasFields";
@@ -57,12 +57,12 @@ const banners = [
   {
     desktop: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1787055655171-1787055654678-janmashtami2banner.webp",
     mobile: "/assets/janmashtami-skj26_m1.webp",
-    alt: "Sri Krishna Janmashtami celebrations at Hare Krishna Movement Vizag",
+    alt: "Sri Krishna Janmashtami celebrations at ISKCON Kakinada",
   },
   {
     desktop: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1787055656278-1787055654943-janmashtami2banner2.webp",
     mobile: "/assets/janmashtami-skj26_m2.webp",
-    alt: "Offer sevas for Sri Krishna Janmashtami at HKM Vizag",
+    alt: "Offer sevas for Sri Krishna Janmashtami at ISKCON Kakinada",
   },
 ];
 
@@ -207,7 +207,7 @@ const sevas: Seva[] = [
   {
     slug: "mandapa",
     title: "Mandapa Seva",
-    description: "Sponsor the sacred Mandapa decoration for the grand Janmashtami celebrations at HKM Vizag.",
+    description: "Sponsor the sacred Mandapa decoration for the grand Janmashtami celebrations at ISKCON Kakinada.",
     image: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1785833231776-1785833231103-ChatGPTImageAug42026021053PM.webp",
     options: [
       { legacySevaId: 228, label: "Donate Rs. 55,555", amount: 55555 },
@@ -558,7 +558,7 @@ export default function JanmashtamiClient({ campaigner }: { campaigner?: Janmash
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#ffd96f]">Hare Krishna Movement</p>
             <h1 className="text-3xl font-bold leading-tight text-[#ffdb68] md:text-5xl" style={{ textShadow: "0 0 40px hsl(42,92%,56%,0.3), 0 0 80px hsl(42,92%,56%,0.15)" }}>Sri Krishna Janmashtami</h1>
             <p className="mt-5 max-w-4xl text-base leading-8 text-white/92 md:text-lg">
-              This Janmashtami, on the 4th & 5th of September, join the grand celebrations at HKM Vizag.
+              This Janmashtami, on the 4th & 5th of September, join the grand celebrations at ISKCON Kakinada.
               Donate towards any of the sevas listed and receive special prasadam and the unlimited blessings of Lord Krishna.
             </p>
             <p className="mt-5 max-w-4xl border-l-4 border-[#ffdb68] pl-4 text-sm font-medium italic leading-7 text-white/90 md:text-base">
@@ -571,7 +571,7 @@ export default function JanmashtamiClient({ campaigner }: { campaigner?: Janmash
               <div>
                 <h2 className="text-lg font-bold text-white">Offer Seva This Janmashtami</h2>
                 <p className="mt-2 text-sm leading-6 text-white/78">
-                  Your offering sustains the midnight Abhisheka, the grand Nandotsava feast, and every sacred ritual performed at HKM Vizag on Lord Krishna&apos;s appearance day.
+                  Your offering sustains the midnight Abhisheka, the grand Nandotsava feast, and every sacred ritual performed at ISKCON Kakinada on Lord Krishna&apos;s appearance day.
                 </p>
               </div>
             </div>
@@ -860,7 +860,7 @@ export default function JanmashtamiClient({ campaigner }: { campaigner?: Janmash
             <div className="md:col-span-4">
               <div>
                 <p className="font-heading text-xl font-bold text-[#ffdb68]" style={{ textShadow: "0 0 24px rgba(255,219,104,0.25)" }}>Hare Krishna Movement</p>
-                <p className="mt-1 text-[11px] uppercase tracking-[0.24em] text-white/50">Visakhapatnam</p>
+                <p className="mt-1 text-[11px] uppercase tracking-[0.24em] text-white/50">Kakinada</p>
               </div>
               <p className="mt-6 text-sm leading-7 text-white/70">
                 Giving human society an opportunity for a life of happiness, good health, peace of mind, and all good qualities through God Consciousness.
@@ -869,9 +869,6 @@ export default function JanmashtamiClient({ campaigner }: { campaigner?: Janmash
               {/* Social icons */}
               <div className="mt-6 flex items-center gap-3">
                 {[
-                  { icon: Facebook, href: "https://www.facebook.com/hkm.vizag", label: "Facebook" },
-                  { icon: Youtube, href: "https://www.youtube.com/user/harekrishnavizag", label: "YouTube" },
-                  { icon: Instagram, href: "https://www.instagram.com/hare_krishna_vizag/", label: "Instagram" },
                   { icon: MessageCircle, href: "https://wa.me/918977761187", label: "WhatsApp" },
                 ].map((s) => (
                   <a
@@ -919,7 +916,7 @@ export default function JanmashtamiClient({ campaigner }: { campaigner?: Janmash
           {/* Bottom bar */}
           <div className="mt-14 border-t border-white/10 pt-6">
             <div className="flex flex-col items-center justify-between gap-3 text-xs text-white/45 md:flex-row">
-              <p>&copy; 2026 Hare Krishna Movement Visakhapatnam. All rights reserved.</p>
+              <p>&copy; 2026 ISKCON Kakinada. All rights reserved.</p>
               <p className="flex items-center gap-1.5">
                 Crafted with <Heart className="h-3 w-3 fill-[#ffd96f] text-[#ffd96f]" /> for Sri Krishna Janmashtami
               </p>

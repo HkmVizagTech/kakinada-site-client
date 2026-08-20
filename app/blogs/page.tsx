@@ -153,7 +153,7 @@ export default function BlogsListPage() {
           </p>
           <h2 className="text-3xl md:text-4xl font-bold mb-2">Devotional Wisdom</h2>
           <p className="text-muted-foreground mb-8 max-w-2xl">
-            A collection of inspiring reads from the pens of the Hare Krishna Vaikuntham Team.
+            A collection of inspiring reads from the pens of the ISKCON Kakinada Team.
           </p>
           <DevotionalCarousel blogs={data.devotional} />
         </div>

@@ -58,23 +58,20 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "HinduTemple",
-  name: "ISKCON Gambheeram Visakhapatnam",
+  name: "ISKCON Kakinada",
   alternateName: [
-    "Hare Krishna Movement Visakhapatnam",
-    "Hare Krishna Vaikuntham",
-    "ISKCON Gambheeram",
-    "ISKCON Vizag",
-    "Hare Krishna Movement Vizag",
+    "Hare Krishna Movement Kakinada",
+    "ISKCON Kakinada",
   ],
-  description: "ISKCON Gambheeram Visakhapatnam, also known as Hare Krishna Movement Vizag, is a center of the International Society for Krishna Consciousness serving the Gambheeram area of Visakhapatnam since 2008.",
+  description: "ISKCON Kakinada, also known as Hare Krishna Movement Kakinada, is a center of the International Society for Krishna Consciousness serving Kakinada since 2008.",
   url: SITE_URL,
   foundingDate: "2008",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Chaitanya Bhavan, Hare Krishna Vaikuntam Cultural Centre, IIM Rd, opp. Akshaya Patra Foundation, Gambhiram",
-    addressLocality: "Visakhapatnam",
+    streetAddress: "Kakinada",
+    addressLocality: "Kakinada",
     addressRegion: "Andhra Pradesh",
-    postalCode: "531163",
+    postalCode: "",
     addressCountry: "IN",
   },
   geo: {
@@ -94,12 +91,7 @@ const organizationJsonLd = {
   // Links Google's Knowledge Graph entity to our real, active social
   // profiles — a genuine local-SEO signal, distinct from (and in support
   // of) claiming/verifying the actual Google Business Profile listing.
-  sameAs: [
-    "https://www.facebook.com/hkm.vizag/",
-    "https://www.instagram.com/harekrishnavizag/",
-    "https://www.youtube.com/user/harekrishnavizag",
-    "https://x.com/hkm_vizag",
-  ],
+  sameAs: [],
 };
 
 const faqJsonLd = {

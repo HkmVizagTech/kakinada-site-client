@@ -75,12 +75,12 @@ const apiBase = () =>
 const VASTRA_CONFIG: CampaignConfig = {
   type: "SQFT",
   pageTitle: "Vastra & Alankara Seva",
-  metaTitle: "Vastra & Alankara Seva | Hare Krishna Vaikuntham Temple, Visakhapatnam",
+  metaTitle: "Vastra & Alankara Seva | ISKCON Kakinada",
   metaDesc:
     "Offer beautiful garments and ornaments to Sri Sri Radha Madan Mohan. Sponsor daily vastra, festival alankara sets, and more — every offering adorns the Lord with love.",
-  ogTitle: "Vastra & Alankara Seva — Hare Krishna Vaikuntham Temple",
+  ogTitle: "Vastra & Alankara Seva — ISKCON Kakinada",
   ogDesc:
-    "Dress the Lord in splendour. Sponsor vastra and alankara seva for Sri Sri Radha Madan Mohan at the Hare Krishna Vaikuntham Temple.",
+    "Dress the Lord in splendour. Sponsor vastra and alankara seva for Sri Sri Radha Madan Mohan at the ISKCON Kakinada.",
   ogImage: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1783677419371-1783677418690-DietyPhotos.jpeg",
   pricePerUnit: 501,
   unitName: "vastra offering",
@@ -94,7 +94,7 @@ const VASTRA_CONFIG: CampaignConfig = {
   bannerImage: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1785573838202-1785573837372-ChatGPTImageAug12026021301PM.webp",
   bannerImageMobile: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1785580143643-1785580142535-vastraheromob.webp",
   aboutImage: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1783677419371-1783677418690-DietyPhotos.jpeg",
-  heroTagline: "A seva initiative of Hare Krishna Movement Visakhapatnam",
+  heroTagline: "A seva initiative of ISKCON Kakinada",
   heroHeading1: "Vastra & Alankara",
   heroHeading2: "Seva",
   heroDesc:
@@ -123,7 +123,7 @@ const TIERS = [
 const FAQS = [
   {
     q: "What is Vastra & Alankara Seva?",
-    a: "Vastra & Alankara Seva is an opportunity to offer beautiful garments (vastra) and ornaments (alankara) to Sri Sri Radha Madan Mohan at the Hare Krishna Vaikuntham Temple. The Deities are dressed and decorated fresh each day, and your offering sustains this loving daily service.",
+    a: "Vastra & Alankara Seva is an opportunity to offer beautiful garments (vastra) and ornaments (alankara) to Sri Sri Radha Madan Mohan at the ISKCON Kakinada. The Deities are dressed and decorated fresh each day, and your offering sustains this loving daily service.",
   },
   {
     q: "How is my offering used?",
@@ -147,7 +147,7 @@ const FAQS = [
   },
   {
     q: "Who are Sri Sri Radha Madan Mohan?",
-    a: "Sri Sri Radha Madan Mohan are the presiding Deities of the Hare Krishna Vaikuntham Temple — Sri Krishna as Madan Mohan (the enchanter of Cupid) accompanied by Srimati Radharani, the embodiment of devotional love.",
+    a: "Sri Sri Radha Madan Mohan are the presiding Deities of the ISKCON Kakinada — Sri Krishna as Madan Mohan (the enchanter of Cupid) accompanied by Srimati Radharani, the embodiment of devotional love.",
   },
 ];
 
@@ -330,7 +330,7 @@ export default function AlankaraVastraClient() {
       const checkoutOptions: Record<string, unknown> = {
         key: created.key,
         name: "Hare Krishna Movement Kakinada",
-        description: `${config.pageTitle}${monthly ? " — Monthly" : ""} — Hare Krishna Vaikuntham Temple`,
+        description: `${config.pageTitle}${monthly ? " — Monthly" : ""} — ISKCON Kakinada`,
         prefill: { name: form.name, email: form.email, contact: form.mobile },
         notes: { sourcePage: "/alankara-vastra-seva", sevaName: config.pageTitle, sevaType: config.orderType },
         handler: async (response: Record<string, string>) => {

@@ -206,21 +206,17 @@ export default function EventsPage() {
           </h2>
           <p className="text-muted-foreground mb-8 leading-relaxed">
             Follow our social channels to stay updated on festivals, special darshan timings, 
-            and spiritual events at Hare Krishna Movement Vizag.
+            and spiritual events at ISKCON Kakinada.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="https://www.youtube.com/@harekrishnavizag"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#"
               className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:opacity-90 transition-opacity"
             >
               Subscribe on YouTube
             </a>
             <a
-              href="https://www.facebook.com/harekrishnavizag"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#"
               className="px-6 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/5 transition-colors"
             >
               Follow on Facebook

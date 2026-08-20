@@ -39,8 +39,8 @@ const SevasSection = () => {
             Donate to Build the Temple
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Contribute to building the Hare Krishna Vaikuntham Temple, an upcoming cultural and spiritual
-            center in Visakhapatnam. All donations qualify for 80G tax benefits.
+            Contribute to building ISKCON Kakinada, an upcoming cultural and spiritual
+            center in Kakinada. All donations qualify for 80G tax benefits.
           </p>
         </motion.div>
 

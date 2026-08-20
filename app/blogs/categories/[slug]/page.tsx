@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const categories = await getCategories();
   const cat = categories.find((c) => c.slug === slug);
   return {
-    title: cat ? `${cat.name} · Blogs · Hare Krishna Vaikuntham` : "Category · Blogs",
+    title: cat ? `${cat.name} · Blogs · ISKCON Kakinada` : "Category · Blogs",
     description: cat ? `Read all blog posts in the ${cat.name} category.` : undefined,
   };
 }

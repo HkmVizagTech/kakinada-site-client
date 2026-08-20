@@ -133,7 +133,7 @@ export default function UtmBuilderTab() {
               </select>
             ) : (
               <Input
-                placeholder="https://harekrishnavizag.org/your-page"
+                placeholder="https://your-domain.org/your-page"
                 value={customUrl}
                 onChange={(e) => setCustomUrl(e.target.value)}
               />

@@ -25,33 +25,33 @@ const activities = [
 ];
 
 const milestones = [
-  { year: "2008", event: "Began humble seva activities in Visakhapatnam" },
-  { year: "2015", event: "Registered as a trust in Visakhapatnam" },
+  { year: "2008", event: "Began humble seva activities in Kakinada" },
+  { year: "2015", event: "Registered as a trust in Kakinada" },
   { year: "2016", event: "Began regular Bhagavad Gita study circles" },
   { year: "2018", event: "Launched Subhojanam food distribution programme" },
-  { year: "2019", event: "Expanded to serve 500+ meals daily at KGH Hospital" },
+  { year: "2019", event: "Expanded to serve 500+ meals daily at local hospitals" },
   { year: "2021", event: "Extended food service to GGH Hospital, Kakinada" },
-  { year: "2023", event: "Announced Hare Krishna Vaikuntham Temple project" },
+  { year: "2023", event: "Announced ISKCON Kakinada Temple project" },
 ];
 
 const trusts = [
   {
-    name: "ISKCON Gambheeram Visakhapatnam",
-    description: "The parent body — Srila Prabhupada's ISKCON temple at Gambheeram, Visakhapatnam. All associated trusts and initiatives operate under its spiritual and institutional umbrella.",
+    name: "ISKCON Kakinada",
+    description: "The parent body — Srila Prabhupada's ISKCON temple at Kakinada. All associated trusts and initiatives operate under its spiritual and institutional umbrella.",
     role: "Parent Organisation",
     color: "from-primary/20 to-primary/5",
     border: "border-primary/30",
   },
   {
     name: "Hare Krishna Movement India",
-    description: "The registered trust through which ISKCON Gambheeram conducts its spiritual, cultural, and educational programmes in Visakhapatnam.",
+    description: "The registered trust through which ISKCON Kakinada conducts its spiritual, cultural, and educational programmes in Kakinada.",
     role: "Spiritual & Cultural Activities",
     color: "from-gold/20 to-gold/5",
     border: "border-gold/30",
   },
   {
     name: "Touchstone Charities",
-    description: "Runs the Subhojanam hospital meal programme, providing free nutritious meals to patients and attendants at government hospitals in Visakhapatnam and Kakinada.",
+    description: "Runs the Subhojanam hospital meal programme, providing free nutritious meals to patients and attendants at government hospitals in Kakinada.",
     role: "Charitable & Welfare Activities",
     color: "from-orange-500/20 to-orange-500/5",
     border: "border-orange-500/30",
@@ -60,21 +60,21 @@ const trusts = [
   },
   {
     name: "Touchstone Foundation",
-    description: "Focuses on education, skill development, and social welfare initiatives under the broader umbrella of HKM Visakhapatnam.",
+    description: "Focuses on education, skill development, and social welfare initiatives under the broader umbrella of HKM Kakinada.",
     role: "Education & Welfare",
     color: "from-purple-500/20 to-purple-500/5",
     border: "border-purple-500/30",
   },
   {
     name: "HKM Charitable Foundation AP",
-    description: "Supports various charitable activities across Andhra Pradesh, extending the reach of Hare Krishna Movement's service activities beyond Visakhapatnam.",
+    description: "Supports various charitable activities across Andhra Pradesh, extending the reach of Hare Krishna Movement's service activities beyond Kakinada.",
     role: "State-wide Charitable Activities",
     color: "from-blue-500/20 to-blue-500/5",
     border: "border-blue-500/30",
   },
   {
     name: "Akshaya Patra (Partner)",
-    description: "ISKCON Gambheeram is associated with the Akshaya Patra Foundation — the world's largest mid-day meal programme, feeding over 2 million schoolchildren daily.",
+    description: "ISKCON Kakinada is associated with the Akshaya Patra Foundation — the world's largest mid-day meal programme, feeding over 2 million schoolchildren daily.",
     role: "School Mid-day Meal Programme",
     color: "from-green-500/20 to-green-500/5",
     border: "border-green-500/30",
@@ -115,14 +115,14 @@ export default function AboutPage() {
               </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 Following in the footsteps of our revered Founder-Acharya, we at{" "}
-                <strong className="text-foreground">Hare Krishna Movement India (HKMI), Visakhapatnam</strong> —
-                also known as <strong className="text-foreground">ISKCON Gambheeram Visakhapatnam</strong> —
+                <strong className="text-foreground">Hare Krishna Movement India (HKMI), Kakinada</strong> —
+                also known as <strong className="text-foreground">ISKCON Kakinada</strong> —
                 have been conducting spiritual, educational and cultural activities with the devoted purpose
                 of bringing about physical, emotional and spiritual well-being.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Serving the community since 2008 and registered as a trust in 2015, HKMI&apos;s
-                activities have grown consistently, touching thousands of lives across Visakhapatnam and beyond.
+                activities have grown consistently, touching thousands of lives across Kakinada and beyond.
               </p>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} animate={inView1 ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.8, delay: 0.2 }}>
@@ -210,7 +210,7 @@ export default function AboutPage() {
             <Ornament className="mb-5" />
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">Associated Trusts & Initiatives</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              ISKCON Gambheeram Visakhapatnam operates through several trusts and partner organisations,
+              ISKCON Kakinada operates through several trusts and partner organisations,
               each focused on a specific area of service — from hospital meals and education to state-wide
               charitable activities. All are guided by the same spiritual mission.
             </p>
@@ -223,7 +223,7 @@ export default function AboutPage() {
           >
             <Image
               src={AssociatedTrustsImg}
-              alt="Associated Trusts of ISKCON Gambheeram Visakhapatnam"
+              alt="Associated Trusts of ISKCON Kakinada"
               width={700} height={900}
               className="w-full max-w-lg rounded-2xl border border-border bg-card p-6 shadow-elevated"
             />
@@ -253,7 +253,7 @@ export default function AboutPage() {
             initial={{ opacity: 0 }} animate={inView5 ? { opacity: 1 } : {}} transition={{ delay: 0.8 }}
             className="text-center text-sm text-muted-foreground mt-10 max-w-2xl mx-auto"
           >
-            <strong className="text-foreground">Note:</strong> Hare Krishna Movement India and ISKCON Gambheeram Visakhapatnam
+            <strong className="text-foreground">Note:</strong> Hare Krishna Movement India and ISKCON Kakinada
             are the same organisation — ISKCON is the global name, while HKM India is the registered legal entity
             in India through which all activities are conducted.
           </motion.p>

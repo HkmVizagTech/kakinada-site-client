@@ -1,9 +1,8 @@
 "use client";
 
-// Floating WhatsApp contact button — same number and pattern used on
-// annadan.harekrishnavizag.org (wa.me/918977761187). Meant to sit on every
-// individual donation page so a donor with questions (or who wants to send
-// a payment screenshot) has a one-tap way to reach the temple.
+// Floating WhatsApp contact button (wa.me/918977761187). Meant to sit on
+// every individual donation page so a donor with questions (or who wants to
+// send a payment screenshot) has a one-tap way to reach the temple.
 //
 // Deliberately NOT added to /donations — per standing instruction, that
 // page is only ever touched when explicitly requested by name.

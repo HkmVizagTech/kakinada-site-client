@@ -78,7 +78,7 @@ const defaultDonationOptions: DonationOption[] = [
 ];
 
 const defaultSettings: DonationPageSettings = {
-  heroEyebrow: "Hare Krishna Movement Vizag",
+  heroEyebrow: "Hare Krishna Movement Kakinada",
   heroTitle: "Donate Annadaan and Gau Seva Online",
   heroSubtitle: "Support Narasimha Jayanthi meals for hungry and needy people.",
   bannerImage: "/assets/donations-nsj-annadan-web.jpeg",

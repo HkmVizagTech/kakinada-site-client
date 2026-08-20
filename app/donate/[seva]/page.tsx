@@ -50,7 +50,7 @@ const FAQS = [
   },
   {
     q: "Is this donation eligible for tax exemption?",
-    a: "Yes, donations to Hare Krishna Movement Visakhapatnam qualify for tax exemption under Section 80G of the Income Tax Act. Check the '80G receipt' box during checkout and provide your PAN.",
+    a: "Yes, donations to Hare Krishna Movement Kakinada qualify for tax exemption under Section 80G of the Income Tax Act. Check the '80G receipt' box during checkout and provide your PAN.",
   },
   {
     q: "Is it safe to donate online here?",

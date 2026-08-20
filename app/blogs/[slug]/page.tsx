@@ -84,9 +84,9 @@ const fmtDate = (s?: string) => {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const blog = await getBlog(slug);
-  if (!blog) return { title: "Blog · ISKCON Gambheeram Visakhapatnam" };
+  if (!blog) return { title: "Blog · ISKCON Kakinada" };
   return {
-    title: blog.metaTitle || `${blog.title} · ISKCON Gambheeram Visakhapatnam Blog`,
+    title: blog.metaTitle || `${blog.title} · ISKCON Kakinada Blog`,
     description: blog.metaDescription || blog.excerpt,
     alternates: { canonical: `/blogs/${blog.slug}` },
     openGraph: {
@@ -136,7 +136,7 @@ export default async function BlogPostPage({
     },
     publisher: {
       "@type": "Organization",
-      name: "ISKCON Gambheeram Visakhapatnam",
+      name: "ISKCON Kakinada",
     },
     mainEntityOfPage: {
       "@type": "WebPage",

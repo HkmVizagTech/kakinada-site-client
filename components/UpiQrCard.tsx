@@ -1,17 +1,16 @@
 "use client";
 
-// UPI QR payment card — replicates the "Scan & Pay with any UPI app" panel
-// from annadan.harekrishnavizag.org, restyled to this site's saffron/gold
-// theme. Open-amount QR: the donor enters the amount in their own UPI app.
+// UPI QR payment card — "Scan & Pay with any UPI app" panel, styled to
+// this site's saffron/gold theme. Open-amount QR: the donor enters the
+// amount in their own UPI app.
 //
-// Payment details are the temple's live UPI credentials (same as the
-// Annadan site). The QR encodes a standard `upi://pay` string so PhonePe,
-// Google Pay, Paytm, BHIM, and any UPI app can scan it.
+// The QR encodes a standard `upi://pay` string so PhonePe, Google Pay,
+// Paytm, BHIM, and any UPI app can scan it.
 
 import { useState } from "react";
 import { QrCode, Copy, Check } from "lucide-react";
 
-// Temple UPI credentials (matches annadan.harekrishnavizag.org)
+// Temple UPI credentials
 const UPI_VPA = "hkmivsp9.08@idfcbank";
 const PAYEE_NAME = "HARE KRISHNA MOVEMENT INDIA";
 

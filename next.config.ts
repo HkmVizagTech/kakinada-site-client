@@ -26,7 +26,7 @@ const nextConfig: NextConfig = {
         hostname: "res.cloudinary.com",
         pathname: "/**",
       },
-      // Cloudflare R2 — hkmsite-media bucket public URL (Vizag shared assets)
+      // Cloudflare R2 — hkmsite-media bucket public URL (shared assets)
       {
         protocol: "https",
         hostname: "pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev",

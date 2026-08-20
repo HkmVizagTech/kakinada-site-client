@@ -212,7 +212,7 @@ const Navbar = () => {
               <span className="h-5 w-px shrink-0 bg-border md:h-6" aria-hidden />
               <Image
                 src={typeof HKVTLogo === "string" ? HKVTLogo : HKVTLogo.src}
-                alt="Hare Krishna Vaikuntam Cultural Complex"
+                alt="ISKCON Kakinada"
                 width={300}
                 height={101}
                 className="h-6 w-auto shrink-0 transition-all duration-300 md:h-11"

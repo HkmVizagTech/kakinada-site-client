@@ -85,7 +85,7 @@ const GalleryPreview = () => {
             Temple Gallery
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-            Glimpses of darshan, worship, prasadam distribution, and festival life at Hare Krishna Vaikuntham.
+            Glimpses of darshan, worship, prasadam distribution, and festival life at ISKCON Kakinada.
           </p>
         </motion.div>
 

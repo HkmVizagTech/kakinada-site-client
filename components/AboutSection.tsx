@@ -10,7 +10,7 @@ const API_URL = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/+$/, "") || "
 
 const DEFAULT_HEADING = "A Legacy of Devotion & Service";
 const DEFAULT_BODY =
-  "Following in the footsteps of our revered Founder-Acharya Srila Prabhupada, ISKCON Visakhapatnam — Hare Krishna Movement India (HKMI) — has been conducting spiritual, educational and cultural activities in Gambheeram since 2008, bringing about physical, emotional and spiritual well-being.";
+  "Following in the footsteps of our revered Founder-Acharya Srila Prabhupada, ISKCON Kakinada — Hare Krishna Movement India (HKMI) — has been conducting spiritual, educational and cultural activities in Kakinada, bringing about physical, emotional and spiritual well-being.";
 
 const highlights = [
   { icon: Heart, title: "Spiritual Well-being", desc: "Programs for physical, emotional and spiritual growth" },

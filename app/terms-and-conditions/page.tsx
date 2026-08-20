@@ -2,8 +2,8 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 
 export const metadata = {
-  title: "Terms & Conditions · Hare Krishna Movement Visakhapatnam",
-  description: "Terms governing the use of the Hare Krishna Movement Visakhapatnam website, donations, and event registrations.",
+  title: "Terms & Conditions · Hare Krishna Movement Kakinada",
+  description: "Terms governing the use of the Hare Krishna Movement Kakinada website, donations, and event registrations.",
 };
 
 const sections = [
@@ -13,7 +13,7 @@ const sections = [
   },
   {
     h: "About Us",
-    p: "This website is operated by Hare Krishna Movement, Visakhapatnam (Hare Krishna Vaikuntham), a spiritual and charitable organisation located in Visakhapatnam, Andhra Pradesh, India.",
+    p: "This website is operated by Hare Krishna Movement, Kakinada (ISKCON Kakinada), a spiritual and charitable organisation located in Kakinada, Andhra Pradesh, India.",
   },
   {
     h: "Donations",
@@ -29,7 +29,7 @@ const sections = [
   },
   {
     h: "Website Content",
-    p: "All content on this website — text, images, logos, and design — is the property of Hare Krishna Movement Visakhapatnam or used with permission. Content may be shared for personal, non-commercial devotional purposes with attribution. Commercial use requires written permission.",
+    p: "All content on this website — text, images, logos, and design — is the property of Hare Krishna Movement Kakinada or used with permission. Content may be shared for personal, non-commercial devotional purposes with attribution. Commercial use requires written permission.",
   },
   {
     h: "User Conduct",
@@ -37,11 +37,11 @@ const sections = [
   },
   {
     h: "Limitation of Liability",
-    p: "The website is provided on an 'as is' basis. While we strive for accuracy, we do not warrant that all information is error-free. To the maximum extent permitted by law, Hare Krishna Movement Visakhapatnam shall not be liable for indirect or consequential damages arising from website use.",
+    p: "The website is provided on an 'as is' basis. While we strive for accuracy, we do not warrant that all information is error-free. To the maximum extent permitted by law, Hare Krishna Movement Kakinada shall not be liable for indirect or consequential damages arising from website use.",
   },
   {
     h: "Governing Law",
-    p: "These terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts of Visakhapatnam, Andhra Pradesh.",
+    p: "These terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts of Kakinada, Andhra Pradesh.",
   },
   {
     h: "Contact",

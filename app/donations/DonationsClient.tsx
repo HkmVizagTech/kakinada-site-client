@@ -115,7 +115,7 @@ const formatAmount = (amount: number) => amount.toLocaleString("en-IN");
 const apiBase = () => (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080").replace(/\/+$/, "");
 
 const defaultSettings: DonationPageSettings = {
-  heroEyebrow: "Hare Krishna Movement Vizag",
+  heroEyebrow: "Hare Krishna Movement Kakinada",
   heroTitle: "Donate Annadaan and Gau Seva Online",
   heroSubtitle: "Support Narasimha Jayanthi meals for hungry and needy people.",
   bannerImage: "/assets/donations-nsj-annadan-web.jpeg",
@@ -450,7 +450,7 @@ export default function DonationsClient() {
               <a href="#annadaan" className="carousel-slide">
                 <picture>
                   <source media="(max-width: 640px)" srcSet={settings.bannerMobileImage || settings.bannerImage} />
-                  <img src={settings.bannerImage} alt="Narasimha Jayanthi Annadaan donation banner for ISKCON Charity Vizag" className="carousel-image" />
+                  <img src={settings.bannerImage} alt="Narasimha Jayanthi Annadaan donation banner for ISKCON Kakinada" className="carousel-image" />
                 </picture>
               </a>
             </div>
@@ -517,9 +517,9 @@ export default function DonationsClient() {
                 <img
                   src={src}
                   alt={[
-                    "Supporters of Hare Krishna Movement Vizag charity seva",
+                    "Supporters of Hare Krishna Movement Kakinada charity seva",
                     "Well-wishers supporting Annadaan and Gau Seva donations",
-                    "Daily Annadaan food distribution service in Visakhapatnam",
+                    "Daily Annadaan food distribution service in Kakinada",
                     "Children receiving Annadaan meal support",
                   ][index] || "Hare Krishna charity seva"}
                   loading="lazy"
@@ -538,20 +538,15 @@ export default function DonationsClient() {
               <p>We are trying to give human society an opportunity for a life of happiness, good health, peace of mind and all good qualities through God Consciousness.</p>
               <h3>SOCIAL CONNECT</h3>
               <div className="social-links">
-                <a href="https://www.facebook.com/hkm.vizag" target="_blank" rel="noreferrer">Facebook</a>
-                <a href="https://www.youtube.com/user/harekrishnavizag" target="_blank" rel="noreferrer">YouTube</a>
-                <a href="https://www.instagram.com/harekrishnavizag/" target="_blank" rel="noreferrer">Instagram</a>
+                <a href="#" target="_blank" rel="noreferrer">Facebook</a>
+                <a href="#" target="_blank" rel="noreferrer">YouTube</a>
+                <a href="#" target="_blank" rel="noreferrer">Instagram</a>
               </div>
             </div>
             <div>
               <h3>ADDRESS</h3>
               <p>
-                <strong>Sri Radha Madan Mohan Mandir</strong><br />
-                Hare Krishna Movement<br />
-                IIM Rd, opp. Akshaya Patra Foundation,<br />
-                Gambhiram,<br />
-                Visakhapatnam,<br />
-                Andhra Pradesh 531163
+                Kakinada, Andhra Pradesh, India
               </p>
             </div>
             <div>

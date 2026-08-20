@@ -52,7 +52,7 @@ const SubhojanamSection = () => {
             </h2>
             <p className="mb-8 max-w-xl leading-relaxed text-white/85">
               Through Subhojanam, we serve fresh, sanctified mid-day meals to school children and
-              the underprivileged across Visakhapatnam — every single day. Your monthly support
+              the underprivileged across Kakinada — every single day. Your monthly support
               sustains this uninterrupted seva.
             </p>
           </motion.div>

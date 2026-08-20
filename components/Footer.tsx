@@ -1,9 +1,8 @@
 "use client";
 
-import { Facebook, Instagram, Youtube, Phone, Mail, Heart, ArrowUp, ExternalLink, Clock, Navigation } from "lucide-react";
+import { Phone, Mail, Heart, ArrowUp, ExternalLink, Clock, Navigation } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -33,7 +32,7 @@ const scheduleItems = [
   "Shayan Aarti - 8:15 PM",
 ];
 
-// Srila Prabhupada's ISKCON Visakhapatnam — Google Maps embed (no API key
+// Srila Prabhupada's ISKCON Kakinada — Google Maps embed (no API key
 // needed via the classic output=embed URL) and a directions link (the short
 // link resolves to the same listing), so visitors can navigate straight there.
 const MAPS_EMBED_URL =
@@ -79,7 +78,7 @@ const Footer = () => {
                 <div className="relative h-48 w-48 shrink-0 overflow-hidden rounded-xl border border-white/10 shadow-lg">
                   <iframe
                     src={MAPS_EMBED_URL}
-                    title="Hare Krishna Vaikuntham Temple location on Google Maps"
+                    title="ISKCON Kakinada location on Google Maps"
                     className="absolute inset-0 h-full w-full border-0"
                     loading="lazy"
                     allowFullScreen
@@ -88,15 +87,7 @@ const Footer = () => {
                 </div>
                 <div className="flex min-w-0 flex-col gap-3">
                   <address className="max-w-[220px] text-sm leading-relaxed text-[hsl(210,30%,97%)]/60 not-italic">
-                    Chaitanya Bhavan,
-                    <br />
-                    Hare Krishna Vaikuntham Cultural Centre,
-                    <br />
-                    IIM Rd, opp. Akshaya Patra Foundation, Gambhiram,
-                    <br />
-                    Kakinada,
-                    <br />
-                    Andhra Pradesh 531163
+                    Kakinada, Andhra Pradesh, India
                   </address>
                   <a
                     href={MAPS_DIRECTIONS_URL}
@@ -108,35 +99,6 @@ const Footer = () => {
                     Get Directions
                   </a>
                 </div>
-              </div>
-              <div className="mb-4 flex gap-3">
-                {[
-                  { icon: Youtube, href: "https://www.youtube.com/user/harekrishnavizag", label: "YouTube" },
-                  { icon: Instagram, href: "https://www.instagram.com/harekrishnavizag/", label: "Instagram" },
-                  { icon: Facebook, href: "https://www.facebook.com/hkm.vizag/", label: "Facebook" },
-                ].map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={social.label}
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-[hsl(210,30%,97%)]/60 transition-all duration-300 hover:bg-primary hover:text-primary-foreground"
-                  >
-                    <social.icon className="h-4 w-4" />
-                  </a>
-                ))}
-                <a
-                  key="whatsapp"
-                  href="https://whatsapp.com/channel/0029VaZDEG67T8bWHjibTy2u"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Join Channel on WhatsApp"
-                  className="flex h-10 items-center gap-1.5 rounded-full bg-white/10 px-3 text-[hsl(210,30%,97%)]/60 transition-all duration-300 hover:bg-[#25D366] hover:text-white"
-                >
-                  <WhatsAppIcon className="h-4 w-4 fill-current" />
-                  <span className="text-xs font-semibold">Join Channel</span>
-                </a>
               </div>
             </div>
 

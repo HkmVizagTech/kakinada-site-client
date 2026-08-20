@@ -1,11 +1,11 @@
 import SpecialOccasionClient from "./SpecialOccasionClient";
 
 export const metadata = {
-  title: "Special Occasion Seva | Hare Krishna Vaikuntham Temple, Visakhapatnam",
+  title: "Special Occasion Seva | ISKCON Kakinada",
   description:
-    "Celebrate a birthday, anniversary, or any special day by sponsoring a seva at the Hare Krishna Vaikuntham Temple. Receive blessings from Sri Sri Radha Madan Mohan, 80G tax exemption, and mahaprasadam.",
+    "Celebrate a birthday, anniversary, or any special day by sponsoring a seva at the ISKCON Kakinada. Receive blessings from Sri Sri Radha Madan Mohan, 80G tax exemption, and mahaprasadam.",
   openGraph: {
-    title: "Special Occasion Seva — Hare Krishna Vaikuntham Temple",
+    title: "Special Occasion Seva — ISKCON Kakinada",
     description:
       "Mark your special day with a heartfelt act of seva and receive blessings from Sri Sri Radha Madan Mohan.",
     images: [

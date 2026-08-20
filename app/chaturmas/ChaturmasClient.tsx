@@ -39,8 +39,7 @@ const apiBase = () => (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080
 
 const WA_CHANNEL = "https://whatsapp.com/channel/0029VaZDEG67T8bWHjibTy2u";
 
-const MAPS_DIRECTIONS_URL =
-  "https://maps.app.goo.gl/Yg2imkSEDxuY5u2K9?g_st=aw";
+const MAPS_DIRECTIONS_URL = "#";
 
 type BannerSlide = {
   desktop: string;
@@ -502,7 +501,7 @@ export default function ChaturmasClient() {
             </h2>
             <p className="mx-auto max-w-xl text-base text-muted-foreground">
               Every charity performed in these holy months yields manifold benefits. Support the ongoing worship,
-              prasadam distribution and cow protection at HKM Vizag.
+              prasadam distribution and cow protection at ISKCON Kakinada.
             </p>
           </motion.div>
 
@@ -675,7 +674,7 @@ export default function ChaturmasClient() {
           </motion.div>
 
           <p className="mt-10 text-center text-xs text-muted-foreground">
-            80G Tax Exemption available · Secured by Razorpay · Donations go to Hare Krishna Movement India, Visakhapatnam
+            80G Tax Exemption available · Secured by Razorpay · Donations go to Hare Krishna Movement India, Kakinada
           </p>
         </div>
       </section>

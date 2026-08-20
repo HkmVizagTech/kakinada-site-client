@@ -2,8 +2,8 @@ import PageLayout from "@/components/PageLayout";
 import PageHero from "@/components/PageHero";
 
 export const metadata = {
-  title: "Privacy Policy · Hare Krishna Movement Visakhapatnam",
-  description: "How Hare Krishna Movement Visakhapatnam collects, uses, and protects your personal information.",
+  title: "Privacy Policy · Hare Krishna Movement Kakinada",
+  description: "How Hare Krishna Movement Kakinada collects, uses, and protects your personal information.",
 };
 
 const sections = [
@@ -41,7 +41,7 @@ const sections = [
   },
   {
     h: "Contact Us",
-    p: "For any privacy-related questions, contact: Chaitanya Bhavan, Hare Krishna Vaikuntam Cultural Centre, IIM Rd, Gambhiram, Visakhapatnam, Andhra Pradesh 531163. Email: social@hkmvizag.org",
+    p: "For any privacy-related questions, contact: Kakinada, Andhra Pradesh, India. Email: social@hkmvizag.org",
   },
 ];
 
