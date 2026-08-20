@@ -48,14 +48,19 @@ interface CampaignConfig {
   formHeading: string;
   formSubheading: string;
   orderType: string;
-  path: string;
-  account: string;
-  category: string;
+  path?: string;
+  account?: string;
+  category?: string;
   type2?: string;
   unit?: { price: number; singular: string; plural: string };
-  tiers: Array<{ label?: string; amount: number; popular?: boolean; default?: boolean }>;
-  gallery: { photos: Array<{ src: string; caption: string }> };
+  tiers?: Array<{ label?: string; amount: number; popular?: boolean; default?: boolean }>;
+  gallery?: { photos: Array<{ src: string; caption: string }> };
   statsApiEndpoint?: string;
+  aboutImage?: string;
+  heroTagline?: string;
+  heroDesc?: string;
+  privileges?: Array<{ icon: React.ComponentType<{ className?: string }>; title: string; text: string }>;
+  higherPrivileges?: Array<{ icon: React.ComponentType<{ className?: string }>; title: string; text: string }>;
 }
 
 type RazorpayConstructor = new (options: Record<string, unknown>) => { open: () => void };
@@ -759,7 +764,7 @@ export default function AlankaraVastraClient() {
         </section>
 
         {/* ── Donor Privileges ── */}
-        <DonorPrivilegesSection scrollToDonate={scrollToDonate} config={config} />
+        <DonorPrivilegesSection scrollToDonate={scrollToDonate} />
 
         {/* ── Deity Alankara Photos ── */}
         <section className="bg-white dark:bg-background py-12 md:py-16">
