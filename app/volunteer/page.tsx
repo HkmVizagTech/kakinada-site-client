@@ -178,11 +178,11 @@ export default function VolunteerPage() {
                   transition={{ delay: i * 0.08, duration: 0.5 }}
                   className="group overflow-hidden rounded-2xl border border-border bg-card shadow-warm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-elevated"
                 >
-                  {event.bannerImage ? (
+                  {event.image ? (
                     <div className="relative aspect-[16/9] overflow-hidden">
                       <img
-                        src={event.bannerImage}
-                        alt={event.name}
+                        src={event.image}
+                        alt={event.title}
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.06]"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[hsl(220,85%,10%,0.6)] via-transparent to-transparent" />
@@ -208,10 +208,10 @@ export default function VolunteerPage() {
                         <Calendar className="h-3.5 w-3.5 text-primary" />
                         <span>{formatDate(event.date)}</span>
                       </div>
-                      {event.venue && (
+                      {event.location && (
                         <div className="flex items-center gap-2">
                           <MapPin className="h-3.5 w-3.5 text-primary" />
-                          <span>{event.venue}</span>
+                          <span>{event.location}</span>
                         </div>
                       )}
                     </div>
@@ -219,7 +219,7 @@ export default function VolunteerPage() {
                     <Link href={`/volunteer/${event._id}`}>
                       <Button
                         className="w-full rounded-full"
-                        disabled={event.status !== "registration_open"}
+                        disabled={event.status !== "active"}
                       >
                         {event.status === "active"
                           ? "Register to Volunteer"
