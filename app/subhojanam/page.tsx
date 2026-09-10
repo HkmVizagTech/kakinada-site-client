@@ -22,7 +22,7 @@ const apiBase = () => (process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080
 
 const stats = [
   { icon: Utensils, value: "3,000+", label: "Meals Served Daily", sub: "Hot, nutritious, hygienic" },
-  { icon: Hospital, value: "2", label: "Government Hospitals", sub: "Local government hospitals" },
+  { icon: Hospital, value: "3", label: "Hospitals Served", sub: "Across Kakinada & Vizag" },
   { icon: Users, value: "10,95,000+", label: "Annual Beneficiaries", sub: "Patients & attendants" },
   { icon: Clock, value: "365", label: "Days a Year", sub: "No holidays, no breaks" },
 ];
@@ -44,9 +44,9 @@ const mealProcess = [
 
 const testimonials = [
   {
-    quote: "When my mother was admitted at KGH, we couldn't afford both food and medicine. The Subhojanam meals were a blessing from God.",
+    quote: "When my mother was admitted at GGH, we couldn't afford both food and medicine. The Subhojanam meals were a blessing from God.",
     name: "Ramesh K.",
-    role: "Patient Attendant · Local Hospital, Kakinada",
+    role: "Patient Attendant · GGH Hospital, Kakinada",
   },
   {
     quote: "I've been volunteering for two years. Seeing the gratitude in people's eyes when they receive a warm meal is the most fulfilling experience of my life.",
@@ -54,9 +54,9 @@ const testimonials = [
     role: "Volunteer · Subhojanam Programme",
   },
   {
-    quote: "The nutritious food helped my father recover faster. We are forever grateful to the Hare Krishna Movement for this noble service.",
+    quote: "The nutritious food helped my father recover faster during his chemo sessions. We are forever grateful to the Hare Krishna Movement for this noble service.",
     name: "Suresh M.",
-    role: "Patient Family · GGH Kakinada",
+    role: "Patient Family · Tata Memorial Centre, Visakhapatnam",
   },
 ];
 
@@ -161,7 +161,7 @@ export default function SubhojanamPage() {
             </h1>
             <p className="mb-8 max-w-lg text-base leading-relaxed text-white/75">
               Subhojanam provides free, hygienic, and nutritious meals every day to patients
-              and their attendants at government hospitals in Kakinada.
+              and their attendants at government hospitals in Kakinada and Visakhapatnam.
             </p>
             <div className="flex flex-wrap gap-4">
               <button
@@ -206,28 +206,26 @@ export default function SubhojanamPage() {
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">Feeding Hope, One Meal at a Time</h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 Annadana is one of the greatest forms of charity. Our Subhojanam Programme provides free, hygienic,
-                and nutritious meals to underprivileged patients and their attendants in government hospitals.
+                and nutritious meals to underprivileged patients and their attendants at hospitals in Kakinada and Visakhapatnam.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Many families stay hungry to save money for medicine. Our programme ensures they never have
                 to make that impossible choice. Every meal is prepared with love in hygienic kitchens following
                 strict quality standards, and served with devotion.
-              </p>
-              <div className="flex flex-col gap-3">
-                <div className="flex items-center gap-3 rounded-xl border border-border bg-card p-4">
-                  <Hospital className="h-5 w-5 shrink-0 text-primary" />
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">Local Hospital, Kakinada</p>
-                    <p className="text-xs text-muted-foreground">Up to 500 meals served daily</p>
+              </p>                <div className="flex flex-col gap-3">
+                {[
+                  { name: "GGH Hospital, Kakinada", detail: "Up to 500 meals served daily" },
+                  { name: "KGH Hospital, Visakhapatnam", detail: "Up to 500 meals served daily" },
+                  { name: "Tata Memorial Centre (Homi Bhabha Cancer Hospital & Research Centre), Visakhapatnam", detail: "Up to 500 meals served daily" },
+                ].map((h) => (
+                  <div key={h.name} className="flex items-center gap-3 rounded-xl border border-border bg-card p-4">
+                    <Hospital className="h-5 w-5 shrink-0 text-primary" />
+                    <div>
+                      <p className="text-sm font-semibold text-foreground">{h.name}</p>
+                      <p className="text-xs text-muted-foreground">{h.detail}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center gap-3 rounded-xl border border-border bg-card p-4">
-                  <Hospital className="h-5 w-5 shrink-0 text-primary" />
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">GGH Hospital, Kakinada</p>
-                    <p className="text-xs text-muted-foreground">Up to 500 meals served daily</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </motion.div>
             <motion.div
