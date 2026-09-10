@@ -15,20 +15,20 @@ const futureDate = (daysAhead: number) =>
 
 const fallbackEvents = [
   {
+    title: "Radhashtami Festival",
+    date: futureDate(9),
+    time: "6:00 AM - 9:00 PM",
+    location: "Temple Premises",
+    description: "Celebration of Srimati Radharani's appearance with special darshan and offerings.",
+    image: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1788946765218-1788946764659-Radhashtamidesk.webp",
+  },
+  {
     title: "Janmashtami Celebrations",
     date: futureDate(45),
     time: "6:00 AM - 12:00 AM",
     location: "Temple Premises",
     description: "Grand celebration of Lord Krishna's appearance day with abhishekam, kirtan, and midnight aarti.",
     image: "/assets/home-event-janmashtami.webp",
-  },
-  {
-    title: "Radhashtami Festival",
-    date: futureDate(75),
-    time: "6:00 AM - 9:00 PM",
-    location: "Temple Premises",
-    description: "Celebration of Srimati Radharani's appearance with special darshan and offerings.",
-    image: "/assets/home-event-radhashtami.webp",
   },
   {
     title: "Gita Jayanti",

@@ -51,7 +51,7 @@ export type FallbackImportantDate = {
  */
 const IMAGE_BY_KEYWORD: Array<[string, string]> = [
   ["janmashtami", "/assets/home-event-janmashtami.webp"],
-  ["radhashtami", "/assets/home-event-radhashtami.webp"],
+  ["radhashtami", "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1788946765218-1788946764659-Radhashtamidesk.webp"],
   ["gita jayanti", "/assets/home-event-gita-jayanti.webp"],
   ["nandotsav", "/assets/home-event-janmashtami.webp"],
   ["govardhan", "/assets/gallery-festival-1.jpg"],
@@ -112,7 +112,7 @@ function upcoming(): VaishnavaDate[] {
 export function getFallbackEvents(limit = 12): FallbackEvent[] {
   const events = upcoming()
     .filter((d) => d.type === "Festival")
-    .slice(0, limit)
+    .slice(0, limit + 1)
     .map((d, i) => ({
       _id: `calendar-${d.date}`,
       title: d.title,
@@ -125,6 +125,14 @@ export function getFallbackEvents(limit = 12): FallbackEvent[] {
       href: pick(HREF_BY_KEYWORD, d.title) || "/vaishnav-calendar",
       isFallback: true as const,
     }));
+
+  // Ensure Radhashtami is always the featured (first) event when present,
+  // since it's the next big celebration.
+  const radhaIdx = events.findIndex((e) => /radhashtami/i.test(e.title));
+  if (radhaIdx > 0) {
+    const [radha] = events.splice(radhaIdx, 1);
+    events.unshift(radha);
+  }
 
   // Two neighbouring cards showing the same photo reads as a broken page,
   // and related festivals (Govardhan Puja / Bhratri Dvitiya) match the same
