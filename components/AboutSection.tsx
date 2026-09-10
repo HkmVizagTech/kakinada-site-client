@@ -58,8 +58,8 @@ const AboutSection = () => {
             <div className="absolute -inset-4 rounded-full ring-gold-dashed animate-slow-spin" aria-hidden />
             <div className="relative aspect-square overflow-hidden rounded-full shadow-elevated">
               <Image
-                src="/assets/home-gallery-radha-krishna.webp"
-                alt="Sri Sri Radha Madan Mohan"
+                src="https://pub-a141ba4729a546b29a5015432b31bd23.r2.dev/media-library/1789026469448-1789026469309-kkdasqas.jpg"
+                alt="Spreading Krishna Consciousness in Kakinada"
                 fill
                 sizes="(min-width: 768px) 400px, 90vw"
                 className="object-cover"
@@ -87,7 +87,7 @@ const AboutSection = () => {
                 <em className="font-serif-display font-semibold not-italic italic text-gold">
                   Krishna Consciousness
                 </em>{" "}
-                in the City of Destiny
+                in the City of Kakinada
               </h2>
             )}
             <p className="mb-4 leading-relaxed text-muted-foreground">

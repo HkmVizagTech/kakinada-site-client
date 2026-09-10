@@ -44,7 +44,7 @@ const SEVA_SLIDES = [
   },
   {
     src: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1785573838202-1785573837372-ChatGPTImageAug12026021301PM.webp",
-    mobileSrc: "https://pub-32ade8e1209149f980ffe2aa4ddc6c99.r2.dev/media-library/1785580143643-1785580142535-vastraheromob.webp",
+    mobileSrc: "https://pub-a141ba4729a546b29a5015432b31bd23.r2.dev/media-library/1789026585499-1789026585358-kkdassq.jpg",
     title: "Vastra & Alankara Seva",
     linkUrl: "/alankara-vastra-seva",
   },

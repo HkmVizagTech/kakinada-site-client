@@ -187,7 +187,7 @@ export default function ContactPage() {
               </div>
               <div className="flex justify-between py-2">
                 <span className="text-muted-foreground">Branch</span>
-                <span className="font-medium text-foreground">Daba Gardens, Vizag</span>
+                <span className="font-medium text-foreground">Daba Gardens, Kakinada</span>
               </div>
             </div>
             <p className="text-xs text-primary mt-4 font-medium">
