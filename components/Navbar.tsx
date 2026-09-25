@@ -5,8 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Mail, Sun, Moon, Clock, Heart, ChevronDown, Home, User, Utensils, Info } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
-import ISKLogo from "@/assets/ISKCONGambheeramLogo.jpeg";
-import HKVTLogo from "@/assets/HKVTLogo.png";
+import ISKKakinadaLogo from "@/assets/iskcon-kkd-logo.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
@@ -198,26 +197,14 @@ const Navbar = () => {
           }`}
         >
           {/* ── Logo ─────────────────────────────────────────────── */}
-          <Link href="/" className="flex shrink-0 items-center gap-3">
+          <Link href="/" className="flex shrink-0 items-center">
             <Image
-              src={typeof ISKLogo === "string" ? ISKLogo : ISKLogo.src}
+              src={ISKKakinadaLogo}
               alt="ISKCON Kakinada - Hare Krishna Movement Kakinada"
-              width={300}
-              height={112}
               priority
               loading="eager"
-              className="h-9 w-auto shrink-0 transition-all duration-300 md:h-[52px]"
+              className="h-10 w-auto max-w-[220px] shrink-0 object-contain transition-all duration-300 md:h-12"
             />
-            <div className="flex shrink-0 items-center gap-2 md:gap-2.5">
-              <span className="h-5 w-px shrink-0 bg-border md:h-6" aria-hidden />
-              <Image
-                src={typeof HKVTLogo === "string" ? HKVTLogo : HKVTLogo.src}
-                alt="ISKCON Kakinada"
-                width={300}
-                height={101}
-                className="h-6 w-auto shrink-0 transition-all duration-300 md:h-11"
-              />
-            </div>
           </Link>
 
           {/* ── Desktop nav with CSS hover dropdowns (hidden below lg) ── */}

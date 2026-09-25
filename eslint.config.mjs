@@ -1,5 +1,6 @@
 import { defineConfig, globalIgnores } from 'eslint/config'
 import nextPlugin from '@next/eslint-plugin-next'
+import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 
@@ -11,6 +12,7 @@ export default defineConfig([
     files: ['**/*.{js,jsx,ts,tsx}'],
     plugins: {
       '@next/next': nextPlugin,
+      'react-hooks': reactHooksPlugin,
       '@typescript-eslint': tsPlugin,
     },
     rules: {
