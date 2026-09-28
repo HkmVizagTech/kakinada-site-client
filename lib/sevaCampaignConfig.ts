@@ -121,7 +121,7 @@ export const GAU_CAMPAIGN: SevaCampaignConfig = {
   bannerMobileWidth: 962,
   bannerMobileHeight: 1635,
 
-  minCustomAmount: 101,
+  minCustomAmount: 1,
   pricePerUnit: 1500,
   unitName: "day of cow care",
   unitNamePlural: "days of cow care",
@@ -270,7 +270,7 @@ export const ANNA_DAAN_CAMPAIGN: SevaCampaignConfig = {
   bannerMobileWidth: 960,
   bannerMobileHeight: 1638,
 
-  minCustomAmount: 51,
+  minCustomAmount: 1,
   pricePerUnit: 25,
   unitName: "meal",
   unitNamePlural: "meals",
@@ -420,7 +420,7 @@ export const GITA_DAAN_CAMPAIGN: SevaCampaignConfig = {
   bannerMobileWidth: 962,
   bannerMobileHeight: 1635,
 
-  minCustomAmount: 101,
+  minCustomAmount: 1,
   pricePerUnit: 250,
   unitName: "Gita",
   unitNamePlural: "Gitas",
