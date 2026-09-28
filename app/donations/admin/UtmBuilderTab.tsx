@@ -13,7 +13,7 @@ import { Input } from "@/components/ui/input";
 import { Copy, Check, Link2, RotateCcw } from "lucide-react";
 import { sevas, getSevaHref } from "@/lib/sevaConfig";
 
-const SITE = (process.env.NEXT_PUBLIC_SITE_URL || "https://harekrishnavizag.org").replace(/\/+$/, "");
+const SITE = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.iskconkakinada.org").replace(/\/+$/, "");
 
 // Known donation entry points across the whole site. Value is the path.
 const KNOWN_PAGES: { label: string; path: string }[] = [

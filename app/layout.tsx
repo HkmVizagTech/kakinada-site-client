@@ -21,7 +21,11 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://harekrishnavizag.org";
+// Fallback is this site's own apex+www, NOT the Vizag host the shared
+// components came from. metadataBase drives every canonical and Open Graph
+// URL, so a wrong value here tells search engines this temple's pages live on
+// another site. Keep this in sync with robots.ts / sitemap.ts.
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.iskconkakinada.org";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

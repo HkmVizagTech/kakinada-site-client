@@ -140,7 +140,7 @@ export default async function BlogPostPage({
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `${process.env.NEXT_PUBLIC_SITE_URL || "https://harekrishnavizag.org"}/blogs/${blog.slug}`,
+      "@id": `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.iskconkakinada.org"}/blogs/${blog.slug}`,
     },
   };
 

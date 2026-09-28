@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://harekrishnavizag.org";
+// Keep in sync with layout.tsx (metadataBase) and robots.ts.
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.iskconkakinada.org";
 const API_URL = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/+$/, "") || "http://localhost:8080";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -27,10 +28,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/refund-policy`, changeFrequency: "yearly", priority: 0.2 },
   ];
 
-  // Dynamic: published blog posts
+  // Dynamic: published blog posts.
+  //
+  // Must read /blogs-proxy, NOT /blogs. The blog pages render from the proxy
+  // (Vizag's feed) while /blogs is this site's own database, which the admin
+  // UI writes to. Reading /blogs here listed this site's own slugs — or, on a
+  // fresh database, nothing at all — so the sitemap never matched the pages
+  // visitors actually land on. The proxy forwards limit/page/category to the
+  // upstream and returns the same { blogs: [...] } shape.
   let blogPages: MetadataRoute.Sitemap = [];
   try {
-    const res = await fetch(`${API_URL}/blogs?limit=50`, { next: { revalidate: 3600 } });
+    const res = await fetch(`${API_URL}/blogs-proxy?limit=50`, { next: { revalidate: 3600 } });
     if (res.ok) {
       const data = await res.json();
       blogPages = (data.blogs || []).map((b: any) => ({
