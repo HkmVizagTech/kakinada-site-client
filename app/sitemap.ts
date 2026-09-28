@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 // Keep in sync with layout.tsx (metadataBase) and robots.ts.
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.iskconkakinada.org";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://iskconkakinada.org";
 const API_URL = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/+$/, "") || "http://localhost:8080";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

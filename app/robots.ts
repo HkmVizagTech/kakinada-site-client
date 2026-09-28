@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 // Keep in sync with layout.tsx (metadataBase) and sitemap.ts.
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.iskconkakinada.org";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://iskconkakinada.org";
 
 export default function robots(): MetadataRoute.Robots {
   return {
