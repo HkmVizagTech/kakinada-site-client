@@ -7,6 +7,7 @@ import { Heart, X } from "lucide-react";
 import { newEventId, getMetaBrowserData, trackPurchase } from "@/lib/metaPixel";
 import { captureTracking, getStoredTracking } from "@/lib/tracking";
 import DonorExtrasFields from "@/components/DonorExtrasFields";
+import { TEMPLE } from "@/lib/templeInfo";
 
 type DonationOption = {
   id: number;
@@ -546,7 +547,7 @@ export default function DonationsClient() {
             <div>
               <h3>ADDRESS</h3>
               <p>
-                Kakinada, Andhra Pradesh, India
+                {TEMPLE.addressOneLine}
               </p>
             </div>
             <div>

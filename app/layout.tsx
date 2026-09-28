@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import ReduxProvider from "@/components/ReduxProvider";
 import MetaPixel from "@/components/MetaPixel";
 import ThemeProvider from "@/components/ThemeProvider";
+import { TEMPLE } from "@/lib/templeInfo";
 
 
 const poppins = Poppins({
@@ -72,17 +73,21 @@ const organizationJsonLd = {
   foundingDate: "2008",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Kakinada",
+    streetAddress: "Hare Krishna Movement, Jayendra Nagar, Siddartha Nagar, Kakinada, Ramanayyapeta",
     addressLocality: "Kakinada",
     addressRegion: "Andhra Pradesh",
-    postalCode: "",
+    postalCode: "533003",
     addressCountry: "IN",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 17.8791762,
-    longitude: 83.372373,
+    // The temple's real coordinates. These previously pointed at the Vizag
+    // area, some 130 km away, which told search engines this temple was in
+    // Vizag.
+    latitude: TEMPLE.coordinates.lat,
+    longitude: TEMPLE.coordinates.lng,
   },
+  hasMap: TEMPLE.mapsDirectionsUrl,
   telephone: "+91 89777 61187",
   email: "social@hkmvizag.org",
   // Real opening pattern (three blocks — the deities rest midday), not a
@@ -115,7 +120,7 @@ const faqJsonLd = {
       name: "Where is ISKCON Kakinada located?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ISKCON Kakinada is located in Kakinada, Andhra Pradesh.",
+        text: `ISKCON Kakinada is located at ${TEMPLE.addressOneLine}.`,
       },
     },
   ],

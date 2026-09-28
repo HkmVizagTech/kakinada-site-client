@@ -16,6 +16,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Pencil, Save, X, FileText, Globe, Phone, Mail, MapPin, Clock, Loader2, PartyPopper, Megaphone } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import { MAJOR_FESTIVALS } from "@/lib/majorFestival";
+import { TEMPLE } from "@/lib/templeInfo";
 
 const API_URL = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/+$/, "") || "http://localhost:8080";
 
@@ -29,7 +30,7 @@ interface SiteContent {
 const defaultContent: SiteContent = {
   hero: { title: "Hare Krishna Movement", subtitle: "Kakinada", tagline: "Spreading the timeless message of Lord Krishna through devotion, service, and community" },
   about: { heading: "A Legacy of Devotion & Service", body: "" },
-  contact: { phone: "", email: "", address: "Kakinada, Andhra Pradesh", morningHours: "4:30 AM - 1:00 PM", eveningHours: "4:00 PM - 8:30 PM" },
+  contact: { phone: "", email: "", address: TEMPLE.addressOneLine, morningHours: "4:30 AM - 1:00 PM", eveningHours: "4:00 PM - 8:30 PM" },
   navbar: { majorFestival: "none", customLink: { enabled: false, label: "", href: "" } },
 };
 

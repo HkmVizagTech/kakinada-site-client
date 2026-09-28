@@ -9,13 +9,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import Ornament from "@/components/Ornament";
+import { TEMPLE } from "@/lib/templeInfo";
 
 const API_URL = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/+$/, "") || "http://localhost:8080";
 
 const DEFAULT_CONTACT = {
   phone: "",
   email: "",
-  address: "ISKCON Kakinada, Kakinada, Andhra Pradesh",
+  address: TEMPLE.addressOneLine,
   morningHours: "4:30 AM - 1:00 PM",
   eveningHours: "4:00 PM - 8:30 PM",
 };

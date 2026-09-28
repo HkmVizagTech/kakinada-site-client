@@ -12,9 +12,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
+import { TEMPLE } from "@/lib/templeInfo";
 
 const contactInfo = [
-  { icon: MapPin, title: "Address", lines: ["ISKCON Kakinada", "Kakinada, Andhra Pradesh"] },
+  { icon: MapPin, title: "Address", lines: [TEMPLE.shortName, ...TEMPLE.addressLines] },
   { icon: Phone, title: "Phone", lines: [""] },
   { icon: Mail, title: "Email", lines: [""] },
   { icon: Clock, title: "Visiting Hours", lines: ["Morning: 4:30 AM - 1:00 PM", "Evening: 4:00 PM - 8:30 PM"] },

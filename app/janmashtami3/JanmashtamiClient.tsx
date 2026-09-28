@@ -11,6 +11,7 @@ import WhatsAppFloatButton from "@/components/WhatsAppFloatButton";
 import JanmashtamiGallery from "@/components/JanmashtamiGallery";
 import { useRazorpayPreload } from "@/lib/useRazorpayPreload";
 import { useAttribution } from "@/lib/useAttribution";
+import { TEMPLE } from "@/lib/templeInfo";
 
 type SevaOption = {
   legacySevaId: number;
@@ -929,7 +930,7 @@ export default function JanmashtamiClient({ campaigner }: { campaigner?: Janmash
                   <div className="text-sm leading-6 text-white/75">
                     <p className="font-semibold text-white">Hare Krishna Movement</p>
                     <p className="mt-1 text-white/65">
-                      Kakinada, Andhra Pradesh
+                       {TEMPLE.addressOneLine}
                     </p>
                   </div>
                 </div>

@@ -3,6 +3,7 @@
 import { Phone, Mail, Heart, ArrowUp, ExternalLink, Clock, Navigation } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { TEMPLE } from "@/lib/templeInfo";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -32,14 +33,11 @@ const scheduleItems = [
   "Shayan Aarti - 8:15 PM",
 ];
 
-// Srila Prabhupada's ISKCON Kakinada — Google Maps embed (no API key
-// needed via the classic output=embed URL) and a directions link (the short
-// link resolves to the same listing), so visitors can navigate straight there.
-const MAPS_EMBED_URL =
-  "https://maps.google.com/maps?q=ISKCON+Kakinada&z=15&output=embed";
-
-const MAPS_DIRECTIONS_URL =
-  "";
+// Location comes from lib/templeInfo so it cannot drift out of sync with the
+// rest of the site. This embed used to be a loose text query for
+// "ISKCON+Kakinada", and the directions link next to it had an empty href.
+const MAPS_EMBED_URL = TEMPLE.mapsEmbedUrl;
+const MAPS_DIRECTIONS_URL = TEMPLE.mapsDirectionsUrl;
 
 const Footer = () => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -87,7 +85,11 @@ const Footer = () => {
                 </div>
                 <div className="flex min-w-0 flex-col gap-3">
                   <address className="max-w-[220px] text-sm leading-relaxed text-[hsl(210,30%,97%)]/60 not-italic">
-                    Kakinada, Andhra Pradesh, India
+                    {TEMPLE.addressLines.map((line) => (
+                      <span key={line} className="block">
+                        {line}
+                      </span>
+                    ))}
                   </address>
                   <a
                     href={MAPS_DIRECTIONS_URL}
