@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, Mail, Sun, Moon, Clock, Heart, ChevronDown, Home, User, Utensils, Info } from "lucide-react";
+import { Menu, X, Phone, Mail, Sun, Moon, Clock, Heart, ChevronDown, Home, User, Utensils, Info, PartyPopper, Megaphone } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import ISKKakinadaLogo from "@/assets/iskcon-kkd-logo.png";
@@ -12,21 +12,10 @@ import Image from "next/image";
 
 import { navEntries, isGroupActive } from "@/lib/navConfig";
 import { NavListItem } from "@/components/NavListItem";
+import { resolveMajorFestival, type MajorFestival } from "@/lib/majorFestival";
+import { resolveCustomNavLink, type CustomNavLink } from "@/lib/customNavLink";
 
-// ── Mobile: exact original flat link list (matches production site) ─
-const mobileNavItems = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Founder", href: "/founder" },
-  { label: "Volunteer", href: "/volunteer" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Events", href: "/events" },
-  { label: "Blog", href: "/blogs" },
-  { label: "Schedule", href: "/daily-schedule" },
-  { label: "Subhojanam", href: "/subhojanam" },
-  { label: "Anna-Daan", href: "/anna-daan-seva" },
-  { label: "Contact", href: "/contact" },
-];
+const API_URL = (process.env.NEXT_PUBLIC_API_URL || "").replace(/\/+$/, "") || "http://localhost:8080";
 
 // ── Mobile bottom bar (matches production site) ────────────────────
 const bottomNavItems = [
@@ -61,16 +50,20 @@ const getDarshanStatus = () => {
   return { isOpen: false, label: `Darshan Closed · ${reopenLabel}` };
 };
 
-// ── Helper: returns true if the href matches the current pathname ────
-const isActive = (href: string, pathname: string) =>
-  href === pathname || (href !== "/" && pathname.startsWith(href));
-
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [darshanStatus, setDarshanStatus] = useState(getDarshanStatus);
   const [menuCanScroll, setMenuCanScroll] = useState(false);
   const menuScrollRef = useRef<HTMLDivElement>(null);
+  // Live refs to each collapsible category wrapper so we can scroll an opened
+  // one fully into view inside the sheet.
+  const groupRefs = useRef<Map<string, HTMLDivElement | null>>(new Map());
+  const [festival, setFestival] = useState<MajorFestival | null>(null);
+  const [customLink, setCustomLink] = useState<CustomNavLink | null>(null);
+  // Which "More" menu category is expanded (single-open accordion — opening
+  // one closes any that was open before).
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
 
   const { resolvedTheme, setTheme } = useTheme();
   const darkMode = resolvedTheme === "dark";
@@ -80,6 +73,37 @@ const Navbar = () => {
   useEffect(() => {
     const id = setInterval(() => setDarshanStatus(getDarshanStatus()), 60_000);
     return () => clearInterval(id);
+  }, []);
+
+  // ── Major festival + custom link in the navbar ─────────────────────
+  // Reads the admin overrides from site-content (public endpoint), then
+  // resolves which festival to highlight (`"auto"` keeps the automatic
+  // calendar pick; `"none"` hides the item entirely) and whether the
+  // separate custom nav link is enabled. Both are independent slots and can
+  // show at the same time.
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      let festivalOverride: string | null = null;
+      let customLinkOverride: { enabled?: boolean; label?: string; href?: string } | null = null;
+      try {
+        const res = await fetch(`${API_URL}/site-content`, { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json();
+          festivalOverride = data?.content?.navbar?.majorFestival ?? "none";
+          customLinkOverride = data?.content?.navbar?.customLink ?? null;
+        }
+      } catch {
+        festivalOverride = "none";
+      }
+      if (!cancelled) {
+        setFestival(resolveMajorFestival(festivalOverride));
+        setCustomLink(resolveCustomNavLink(customLinkOverride));
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // ── Scroll detection ──────────────────────────────────────────────
@@ -108,17 +132,52 @@ const Navbar = () => {
     const timer = setTimeout(update, 320);
     el.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
+    update();
     return () => {
       clearTimeout(timer);
       el.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
-  }, [mobileOpen]);
+  }, [mobileOpen, openGroup]);
 
   // ── Toggle mobile menu ────────────────────────────────────────────
   const toggleMobile = () => setMobileOpen((v) => !v);
 
   const toggleTheme = () => setTheme(darkMode ? "light" : "dark");
+
+  // ── Toggle a collapsible category in the mobile "More" menu ───────
+  // Only one category stays open at a time; tapping the open one closes it.
+  // After toggling we wait for the fold/unfold animation, then glide the
+  // opened category fully into view (or bring a closed one's header back).
+  const toggleGroup = (label: string) => {
+    if (openGroup === label) {
+      setOpenGroup(null);
+      window.setTimeout(() => scrollGroupIntoView(label), 320);
+    } else {
+      setOpenGroup(label);
+      window.setTimeout(() => scrollGroupIntoView(label), 340);
+    }
+  };
+
+  // Smoothly scroll the mobile sheet so the target category slot is visible.
+  const scrollGroupIntoView = (label: string) => {
+    const container = menuScrollRef.current;
+    const el = groupRefs.current.get(label);
+    if (!container || !el) return;
+    const cRect = container.getBoundingClientRect();
+    const eRect = el.getBoundingClientRect();
+    const elTop = eRect.top - cRect.top + container.scrollTop;
+    container.scrollTo({
+      top: Math.max(0, elTop - 12),
+      behavior: "smooth",
+    });
+  };
+
+  // Link styling shared by the mobile "More" menu rows.
+  const mobileLinkCls = (active: boolean) =>
+    `flex items-center gap-2 rounded-lg px-4 py-2.5 text-[15px] font-medium transition-colors ${
+      active ? "text-primary bg-primary/10" : "text-foreground hover:text-primary hover:bg-primary/10"
+    }`;
 
   // ── Render ────────────────────────────────────────────────────────
   return (
@@ -226,6 +285,45 @@ const Navbar = () => {
                 );
               }
 
+              if (entry.kind === "festival") {
+                // Only rendered while a major festival is active — either
+                // auto-picked from the calendar or set by an admin. Styled
+                // like any other top-level link (no gold pill / badge).
+                if (!festival) return null;
+                const activeF =
+                  pathname === festival.href || pathname.startsWith(festival.href);
+                return (
+                  <Link
+                    key={festival.href}
+                    href={festival.href}
+                    className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-2 text-[13px] font-medium transition-all ${
+                      activeF ? "text-primary" : "text-muted-foreground hover:text-primary"
+                    }`}
+                  >
+                    {festival.label}
+                  </Link>
+                );
+              }
+
+              if (entry.kind === "customLink") {
+                // Only rendered while an admin has enabled this separate
+                // custom nav link. Styled like the festival slot.
+                if (!customLink) return null;
+                const activeC =
+                  pathname === customLink.href || pathname.startsWith(customLink.href);
+                return (
+                  <Link
+                    key={customLink.href}
+                    href={customLink.href}
+                    className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg px-2.5 py-2 text-[13px] font-medium transition-all ${
+                      activeC ? "text-primary" : "text-muted-foreground hover:text-primary"
+                    }`}
+                  >
+                    {customLink.label}
+                  </Link>
+                );
+              }
+
               const group = entry.group;
               const groupActive = isGroupActive(group, pathname);
               const colCount =
@@ -299,63 +397,156 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* ── Mobile overlay menu (flat link list) ────────────────── */}
+        {/* ── Mobile "More" sheet ─────────────────────────────────── */}
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
-              initial={{ height: 0 }}
-              animate={{ height: "auto" }}
-              exit={{ height: 0 }}
-              transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="relative lg:hidden bg-white dark:bg-card backdrop-blur-md border-t border-border overflow-hidden rounded-b-2xl"
+              key="mobile-sheet"
+              initial={{ opacity: 0, y: -14 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -14 }}
+              transition={{ duration: 0.22, ease: "easeInOut" }}
+              className={`absolute top-full flex max-h-[calc(100dvh-96px)] flex-col overflow-hidden bg-white shadow-elevated dark:bg-card md:max-h-[calc(100dvh-112px)] ${
+                scrolled
+                  ? "inset-x-2 md:inset-x-8 rounded-b-2xl md:rounded-2xl border border-border/60"
+                  : "inset-x-0 rounded-b-3xl border-t border-border"
+              }`}
             >
-              <div
-                ref={menuScrollRef}
-                className="container mx-auto px-4 py-3 flex flex-col gap-0.5 max-h-[calc(100dvh-9rem)] overflow-y-auto"
-              >
-                {mobileNavItems.map((item) => (
+              {/* Scrollable body */}
+              <div ref={menuScrollRef} className="flex-1 overflow-y-auto overscroll-contain px-4 py-3">
+                {festival && (
                   <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`text-left px-4 py-2.5 text-[15px] rounded-lg font-medium transition-colors ${
-                      pathname === item.href
-                        ? "text-primary bg-primary/10"
-                        : "text-foreground hover:text-primary hover:bg-primary/10"
-                    }`}
+                    href={festival.href}
+                    className={mobileLinkCls(pathname === festival.href || pathname.startsWith(festival.href))}
                   >
-                    {item.label}
+                    <PartyPopper className="h-4 w-4" />
+                    {festival.label}
                   </Link>
-                ))}
-                <button
-                  onClick={toggleTheme}
-                  className="mt-1.5 flex items-center justify-center gap-2 rounded-full border border-border px-4 py-2.5 text-[15px] font-medium text-foreground transition-colors hover:text-primary hover:border-primary"
-                >
-                  {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                )}
+                {customLink && (
+                  <Link
+                    href={customLink.href}
+                    className={mobileLinkCls(pathname === customLink.href || pathname.startsWith(customLink.href))}
+                  >
+                    <Megaphone className="h-4 w-4" />
+                    {customLink.label}
+                  </Link>
+                )}
+                <button onClick={toggleTheme} className={`${mobileLinkCls(false)} w-full`}>
+                  {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
                   {darkMode ? "Light Mode" : "Dark Mode"}
                 </button>
-                <Button
-                  variant="default"
-                  className="mt-1.5 rounded-full bg-gradient-ocean text-white border-0 text-[15px]"
-                  asChild
-                >
-                  <Link href="/donate">
-                    <Heart className="w-4 h-4 mr-1.5 fill-current" />
-                    Donate Now
-                  </Link>
-                </Button>
-                <button
-                  onClick={() => setMobileOpen(false)}
-                  className="mt-1.5 flex items-center justify-center gap-2 rounded-full border border-border px-4 py-2.5 text-[15px] font-medium text-foreground transition-colors hover:text-primary hover:border-primary"
-                >
-                  <X className="w-4 h-4" />
-                  Close Menu
-                </button>
-              </div>
+
+                <p className="px-4 pb-1 pt-3 text-[11px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
+                  Explore by Category
+                </p>
+                {navEntries
+                  .filter(
+                    (entry): entry is Extract<typeof entry, { kind: "group" }> => entry.kind === "group"
+                  )
+                  .map((entry) => {
+                    const group = entry.group;
+                    const GroupIcon = group.icon;
+                    const open = openGroup === group.label;
+                    return (
+                      <div
+                        key={group.label}
+                        ref={(el) => {
+                          if (el) groupRefs.current.set(group.label, el);
+                          else groupRefs.current.delete(group.label);
+                        }}
+                        className="overflow-hidden rounded-xl"
+                      >
+                        <button
+                          onClick={() => toggleGroup(group.label)}
+                          aria-expanded={open}
+                          className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-[15px] font-medium transition-all duration-200 ${
+                            open
+                              ? "bg-primary/[0.06] text-primary ring-1 ring-inset ring-primary/15"
+                              : "text-foreground hover:bg-primary/5 hover:text-primary"
+                          }`}
+                        >
+                          <span className="flex items-center gap-2.5">
+                            {GroupIcon && (
+                              <span
+                                className={`flex h-7 w-7 items-center justify-center rounded-lg transition-colors ${
+                                  open ? "bg-primary/10 text-primary" : "bg-muted text-muted-foreground"
+                                }`}
+                              >
+                                <GroupIcon className="h-4 w-4" />
+                              </span>
+                            )}
+                            <span>{group.label}</span>
+                          </span>
+                          <span
+                            className={`flex h-6 w-6 items-center justify-center rounded-full transition-all duration-300 ${
+                              open ? "rotate-180 bg-primary/10 text-primary" : "bg-muted/60 text-muted-foreground"
+                            }`}
+                          >
+                            <ChevronDown className="h-4 w-4" />
+                          </span>
+                        </button>
+                        <motion.div
+                          initial={false}
+                          animate={
+                            open
+                              ? { height: "auto", opacity: 1, y: 0 }
+                              : { height: 0, opacity: 0, y: -6 }
+                          }
+                          transition={{ duration: 0.28, ease: "easeInOut" }}
+                          style={{ overflow: "hidden" }}
+                        >
+                          <div className="ml-5 mt-1 flex flex-col gap-0.5 border-l border-primary/15 pb-1 pl-4">
+                            {group.items.map((item) => (
+                                  <Link
+                                    key={item.href}
+                                    href={item.href}
+                                    className={`flex items-center gap-2 rounded-lg px-3 py-2.5 text-[14px] transition-colors ${
+                                      pathname === item.href
+                                        ? "text-primary bg-primary/10"
+                                        : "text-muted-foreground hover:bg-primary/5 hover:text-primary"
+                                    }`}
+                                  >
+                                    {item.label}
+                                  </Link>
+                                ))}
+                              </div>
+                            </motion.div>
+                      </div>
+                    );
+                  })}
+
+              {/* Scroll hint — shown only while there is actually more below */}
               {menuCanScroll && (
-                <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-10 flex h-10 items-end justify-center bg-gradient-to-t from-white dark:from-card via-white/80 dark:via-card/80 to-transparent pb-1">
+                <div className="pointer-events-none sticky bottom-0 -mt-10 z-10 flex h-10 items-end justify-center bg-gradient-to-t from-white via-white/80 to-transparent pb-1 dark:from-card dark:via-card/80">
                   <ChevronDown className="h-4 w-4 animate-bounce text-muted-foreground" />
                 </div>
               )}
+              </div>
+
+              {/* Sticky footer actions — always visible, never buried in the scroll */}
+              <div className="border-t border-border/60 bg-muted/25 px-4 py-3">
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant="default"
+                    size="sm"
+                    className="h-11 flex-1 rounded-full bg-gradient-ocean text-white border-0 text-sm shadow-sm"
+                    asChild
+                  >
+                    <Link href="/donate">
+                      <Heart className="w-4 h-4 mr-1.5 fill-current" />
+                      Donate Now
+                    </Link>
+                  </Button>
+                  <button
+                    onClick={() => setMobileOpen(false)}
+                    className="inline-flex h-11 flex-1 items-center justify-center gap-1.5 rounded-full border border-border bg-background text-sm font-medium text-foreground transition-colors hover:border-primary/40 hover:text-primary"
+                  >
+                    <X className="w-4 h-4" />
+                    Close Menu
+                  </button>
+                </div>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
