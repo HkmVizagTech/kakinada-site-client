@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Kartika Vanabhojanam">
+  <defs>
+    <linearGradient id="vb-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1f5a3d"/>
+      <stop offset="1" stop-color="#0a1c14"/>
+    </linearGradient>
+    <linearGradient id="vb-brass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f1dc9c"/>
+      <stop offset="0.55" stop-color="#d4ab52"/>
+      <stop offset="1" stop-color="#a97e30"/>
+    </linearGradient>
+    <radialGradient id="vb-glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0" stop-color="#e8c46a" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#e8c46a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="50" cy="50" r="48" fill="url(#vb-bg)"/>
+  <circle cx="50" cy="50" r="48" fill="url(#vb-glow)"/>
+  <circle cx="50" cy="50" r="46.2" fill="none" stroke="url(#vb-brass)" stroke-width="2.2"/>
+  <circle cx="50" cy="50" r="42.6" fill="none" stroke="#d4ab52" stroke-opacity="0.35" stroke-width="0.7"/>
+  <!-- tree -->
+  <path d="M45 69 C48 62 48.6 54 47.8 46 L52.2 46 C51.4 54 52 62 55 69 Z" fill="url(#vb-brass)"/>
+  <path d="M48 52 L41 45 M52 52 L60 45" stroke="url(#vb-brass)" stroke-width="2" stroke-linecap="round"/>
+  <g fill="url(#vb-brass)">
+    <circle cx="50" cy="27" r="11"/>
+    <circle cx="35" cy="34" r="9"/>
+    <circle cx="65" cy="34" r="9"/>
+    <circle cx="42" cy="41" r="7.5"/>
+    <circle cx="58" cy="41" r="7.5"/>
+  </g>
+  <!-- clearing -->
+  <ellipse cx="50" cy="73" rx="30" ry="8" fill="#d4ab52" fill-opacity="0.22"/>
+  <!-- friends sitting in a circle around the meal -->
+  <g fill="#f6efdc">
+    <circle cx="25" cy="66.5" r="3.3"/><ellipse cx="25" cy="73" rx="4.6" ry="4.2"/>
+    <circle cx="75" cy="66.5" r="3.3"/><ellipse cx="75" cy="73" rx="4.6" ry="4.2"/>
+    <circle cx="37" cy="71.5" r="3.3"/><ellipse cx="37" cy="78" rx="4.6" ry="4.2"/>
+    <circle cx="63" cy="71.5" r="3.3"/><ellipse cx="63" cy="78" rx="4.6" ry="4.2"/>
+    <circle cx="50" cy="75" r="3.3"/><ellipse cx="50" cy="81.5" rx="4.6" ry="4.2"/>
+  </g>
+  <ellipse cx="50" cy="71" rx="5.5" ry="1.9" fill="url(#vb-brass)"/>
+</svg>
