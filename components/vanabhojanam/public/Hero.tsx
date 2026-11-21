@@ -99,20 +99,26 @@ export default function Hero({ onRegister }: { onRegister: () => void }) {
             {event ? (
               <div
                 style={rise(0)}
-                className="flex flex-col items-center justify-center gap-x-3 gap-y-1.5 rounded-2xl border border-white/30 bg-white/10 px-5 py-3 text-sm font-medium text-white/90 md:flex-row md:rounded-full md:px-4 md:py-2"
+                className="flex w-full max-w-md flex-col items-stretch overflow-hidden rounded-2xl border border-white/25 bg-white/10 text-white/90 backdrop-blur-sm md:max-w-none md:w-auto md:flex-row md:items-center"
               >
-                <span className="flex items-center gap-2">
-                  <CalendarDays size={16} />
+                <div className="flex items-center justify-center gap-2.5 px-5 py-3 text-sm font-semibold md:py-3.5 md:text-base">
+                  <CalendarDays size={18} className="shrink-0 text-vb-brass-300" />
                   {event.dateLabel}
-                </span>
-                {event.venue.short && (
-                  <>
-                    <span className="hidden opacity-40 md:block">·</span>
-                    <span className="flex items-center gap-2">
-                      <MapPin size={16} />
-                      {event.venue.short}
+                </div>
+                {(event.venue.name || event.venue.address) && (
+                  <a
+                    href={event.venue.mapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Open venue in maps"
+                    className="flex items-center justify-center gap-2.5 border-t border-white/20 px-5 py-3 text-left transition-colors hover:bg-white/10 md:border-l md:border-t-0 md:py-3.5"
+                  >
+                    <MapPin size={18} className="shrink-0 text-vb-brass-300" />
+                    <span className="flex min-w-0 flex-col leading-snug">
+                      {event.venue.name && <span className="text-sm font-semibold md:text-base">{event.venue.name}</span>}
+                      {event.venue.address && <span className="text-xs font-normal text-white/70 md:text-sm">{event.venue.address}</span>}
                     </span>
-                  </>
+                  </a>
                 )}
               </div>
             ) : (
